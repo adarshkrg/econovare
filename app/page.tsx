@@ -2,33 +2,34 @@ import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Services from "./components/Services";
-import Products from "./components/Products";
-import Insight from "./components/Insight";
-import Projects from "./components/Projects";
-import Testimonials from "./components/Testimonials";
+import ProblemSolution from "./components/ProblemSolution";
+import Offerings from "./components/Offerings";
+import Market from "./components/Market";
+import Leadership from "./components/Leadership";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Green Filament | Solar Energy Company in Bhubaneswar, Odisha",
+  title: "EcoNova Resources & Energy | Shaping a Cleaner, Greener Tomorrow",
   description:
-    "Green Filament is Odisha's leading solar energy company based in Bhubaneswar. Rooftop solar, solar pumps, street lights & solar cooking across 12+ districts. NSIC Registered.",
+    "EcoNova Resources & Energy Private Limited — World Air Pollution Control and Sustainable Energy Solutions. Integrating renewable energy, geothermal systems, agriculture, marine resources, and engineering.",
   alternates: {
-    canonical: "https://greenfilament.com",
+    canonical: "https://econovare.com",
   },
   openGraph: {
-    title: "Green Filament | Solar Energy Company in Bhubaneswar, Odisha",
+    title: "EcoNova Resources & Energy | Shaping a Cleaner, Greener Tomorrow",
     description:
-      "Odisha's trusted solar energy company — rooftop solar, pumps, street lights, solar cooking and more. 500+ projects across 12+ districts.",
-    url: "https://greenfilament.com",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Green Filament Solar Energy Company Odisha" }],
+      "Integrated sustainability platform: Renewable Energy, Geothermal Heating & Cooling, Agriculture, Marine Resources & Advanced Engineering.",
+    url: "https://econovare.com",
+    siteName: "EcoNova Resources & Energy",
+    images: [{ url: "/images/logo.png", width: 1200, height: 630, alt: "EcoNova Resources & Energy Logo" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Green Filament | Solar Energy Company in Bhubaneswar, Odisha",
+    title: "EcoNova Resources & Energy | Shaping a Cleaner, Greener Tomorrow",
     description:
-      "Odisha's trusted solar energy company — rooftop solar, pumps, street lights, solar cooking and more.",
+      "World Air Pollution Control and Sustainable Energy Solutions. Renewable Energy, Geothermal, Agri-Tech & Marine.",
+    images: ["/images/logo.png"],
   },
 };
 
@@ -38,11 +39,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
-      <Products />
-      <Insight />
-      <Projects />
-      <Testimonials />
+      <ProblemSolution />
+      <Offerings />
+      <Market />
+      <Leadership />
       <CTABanner />
       <Footer />
     </main>

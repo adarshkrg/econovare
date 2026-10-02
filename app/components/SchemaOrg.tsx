@@ -1,80 +1,65 @@
 /* ============================================================
-   ORGANIZATION + LOCALBUSINESS SCHEMA (JSON-LD)
+   ECONOVA ORGANIZATION SCHEMA (JSON-LD)
    - Renders site-wide in root layout.tsx
-   - Helps Google show rich business info (knowledge panel,
-     local pack, star ratings, sitelinks) in search results
-   - Combines Organization + LocalBusiness types since Green
-     Filament is both a registered company and a local service
-     business serving Odisha districts
+   - Structured data for EcoNova Resources & Energy Private Limited
    ============================================================ */
 
 export default function SchemaOrg() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://greenfilament.com/#organization",
-    name: "Green Filament",
-    alternateName: "Green Filament Solar",
-    url: "https://greenfilament.com",
-    logo: "https://greenfilament.com/images/logo.png",
-    image: "https://greenfilament.com/images/logo.png",
+    "@type": "Organization",
+    "@id": "https://econovare.com/#organization",
+    name: "EcoNova Resources & Energy Private Limited",
+    alternateName: "EcoNova Resources & Energy",
+    url: "https://econovare.com",
+    logo: "https://econovare.com/images/logo.png",
+    image: "https://econovare.com/images/logo.png",
     description:
-      "Green Filament is Odisha's trusted solar energy company, delivering rooftop solar, solar water pumps, solar street lighting and solar cooking systems across Bhubaneswar and 12+ districts in Odisha since 2018.",
-    foundingDate: "2018-01",
-    telephone: "+91-9337256398",
-    email: "connect@greenfilament.com",
-    priceRange: "₹₹",
+      "EcoNova Resources & Energy Private Limited is an integrated sustainability platform uniting renewable energy, geothermal heating & cooling, agriculture, marine resources, and advanced technology.",
+    telephone: "+91-9727780048",
+    email: "info.econovare@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "628/1333, Lane 1, Laxmi Vihar, Tankapani Road",
-      addressLocality: "Bhubaneswar",
-      addressRegion: "Odisha",
-      postalCode: "751002",
+      streetAddress: "Plot No. 213/3, ARIHANT PALACE, Sector-20",
+      addressLocality: "Gandhinagar",
+      addressRegion: "Gujarat",
+      postalCode: "382021",
       addressCountry: "IN",
     },
-    areaServed: [
-      {
-        "@type": "State",
-        name: "Odisha",
-      },
-      {
-        "@type": "State",
-        name: "Jharkhand",
-      },
-    ],
-    sameAs: [
-      "https://www.facebook.com/green.filament/",
-      "https://www.instagram.com/green.filament/",
-      "https://www.linkedin.com/company/green-filament",
-      "https://www.youtube.com/@greenfilamentsolarenergy7440",
-    ],
     makesOffer: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Rooftop Solar Installation",
+          name: "Renewable Energy Projects (Solar, Wind, Geothermal, Biomass, Hydrogen)",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Solar Water Pump Installation",
+          name: "Geothermal Heating & Cooling Systems (GHC)",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Solar Street Lighting",
+          name: "Engineering & Technology (Turnkey EPC, Manufacturing, O&M)",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Solar Cooking Systems",
+          name: "Agriculture & Food Processing",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Marine & Aquaculture",
         },
       },
     ],

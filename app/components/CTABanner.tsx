@@ -1,170 +1,154 @@
-/* ============================================================
-   CTA BANNER COMPONENT
-   - Amber gradient + solar grid pattern
-   - Bold headline + pill button with arrow circle
-   - WhatsApp + Call CTAs
-   ============================================================ */
+"use client";
 
 import Link from "next/link";
 
+/* ============================================================
+   ECONOVA CTA BANNER
+   - Clean, high-contrast banner inviting collaboration
+   - Phone, email, and consultation links
+   ============================================================ */
+
 export default function CTABanner() {
-    return (
-        <>
-            <style>{`
-        /* ── CTA pill button ── */
-        .cta-pill {
-          display: inline-flex;
-          align-items: center;
-          gap: 0;
-          background: #fff;
-          border-radius: 40px;
-          padding: 6px 6px 6px 24px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-          text-decoration: none;
-          transition: all 0.2s;
-        }
-        .cta-pill:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 28px rgba(0,0,0,0.2);
-        }
-        .cta-pill-icon {
-          width: 42px;
-          height: 42px;
-          border-radius: 50%;
-          background: #FDB92E;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-left: 12px;
-          flex-shrink: 0;
-        }
+  return (
+    <section
+      style={{
+        background: "linear-gradient(135deg, var(--en-dark-green) 0%, var(--en-navy) 100%)",
+        padding: "clamp(60px, 8vw, 90px) 0",
+        color: "#ffffff",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Decorative Blur */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          top: "-50%",
+          right: "-10%",
+          width: "450px",
+          height: "450px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(125, 249, 229, 0.25) 0%, transparent 70%)",
+          filter: "blur(60px)",
+          pointerEvents: "none",
+        }}
+      />
 
-        /* ── Secondary buttons ── */
-        .cta-secondary {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          border: 1.5px solid rgba(255,255,255,0.5);
-          color: #fff;
-          font-size: 13px;
-          font-weight: 600;
-          padding: 10px 20px;
-          border-radius: 40px;
-          text-decoration: none;
-          transition: all 0.2s;
-        }
-        .cta-secondary:hover {
-          background: rgba(255,255,255,0.15);
-        }
-      `}</style>
+      <div className="en-container" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+        <span
+          style={{
+            display: "inline-block",
+            padding: "6px 18px",
+            borderRadius: "999px",
+            backgroundColor: "rgba(125, 249, 229, 0.15)",
+            color: "var(--en-mint)",
+            fontSize: "13px",
+            fontWeight: 800,
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+            marginBottom: "20px",
+          }}
+        >
+          Partner With EcoNova
+        </span>
 
-            <section style={{
-                background: "#ffffff",
-                padding: "0 clamp(24px, 5vw, 80px)",
-                paddingBottom: "clamp(40px, 6vw, 80px)",
-            }}>
-                <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
+        <h2
+          className="en-heading"
+          style={{
+            fontSize: "clamp(28px, 4.5vw, 46px)",
+            fontWeight: 800,
+            color: "#ffffff",
+            maxWidth: "900px",
+            margin: "0 auto 20px",
+            lineHeight: 1.25,
+          }}
+        >
+          Ready to Accelerate Your Clean Energy & Sustainable Resource Initiatives?
+        </h2>
 
-                    {/* ── CTA Card ── */}
-                    <div style={{
-                        borderRadius: "24px",
-                        overflow: "hidden",
-                        position: "relative",
-                        padding: "clamp(48px, 7vw, 80px) clamp(24px, 5vw, 60px)",
-                        textAlign: "center",
-                        background: "linear-gradient(135deg, #F5A000 0%, #FDB92E 50%, #e07b00 100%)",
-                    }}>
+        <p
+          style={{
+            fontSize: "clamp(16px, 2vw, 19px)",
+            color: "var(--en-aqua-light)",
+            maxWidth: "750px",
+            margin: "0 auto 36px",
+            lineHeight: 1.6,
+          }}
+        >
+          Connect with our multidisciplinary engineering, agriculture, and energy specialists to explore pilot projects,
+          turnkey EPC, or technological collaborations.
+        </p>
 
-                        {/* --- Solar grid pattern --- */}
-                        <div style={{ position: "absolute", inset: 0, opacity: 0.15 }}>
-                            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <pattern id="solargrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
-                                    </pattern>
-                                </defs>
-                                <rect width="100%" height="100%" fill="url(#solargrid)" />
-                            </svg>
-                        </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "16px",
+          }}
+        >
+          <Link
+            href="/connect"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "14px 32px",
+              backgroundColor: "var(--en-teal)",
+              color: "#ffffff",
+              fontWeight: 700,
+              fontSize: "16px",
+              borderRadius: "8px",
+              boxShadow: "0 4px 18px rgba(14, 124, 134, 0.4)",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "var(--en-deep-teal)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "var(--en-teal)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            <span>Get in Touch</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Link>
 
-                        {/* --- Sun glow top right --- */}
-                        <div style={{
-                            position: "absolute",
-                            right: "8%",
-                            top: "-30%",
-                            width: "340px",
-                            height: "340px",
-                            borderRadius: "50%",
-                            background: "rgba(255,255,255,0.12)",
-                            pointerEvents: "none",
-                        }} />
-
-                        {/* --- Bottom glow --- */}
-                        <div style={{
-                            position: "absolute",
-                            left: "10%",
-                            bottom: "-20%",
-                            width: "240px",
-                            height: "240px",
-                            borderRadius: "50%",
-                            background: "rgba(255,255,255,0.08)",
-                            pointerEvents: "none",
-                        }} />
-
-                        {/* --- Content --- */}
-                        <div style={{ position: "relative", zIndex: 1 }}>
-
-                            {/* Title */}
-                            <h2 style={{
-                                fontSize: "clamp(26px, 4vw, 42px)",
-                                fontWeight: 700,
-                                color: "#fff",
-                                marginBottom: "12px",
-                                lineHeight: 1.3,
-                            }}>
-                                Ready to Start<br />Saving with Solar?
-                            </h2>
-
-                            {/* Subtitle */}
-                            <p style={{
-                                fontSize: "14px",
-                                color: "rgba(255,255,255,0.88)",
-                                marginBottom: "32px",
-                                lineHeight: 1.7,
-                            }}>
-                                Join 500+ homes and businesses across Odisha running on clean, free solar energy.
-                            </p>
-
-                            {/* Buttons row */}
-                            <div style={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                gap: "14px",
-                                flexWrap: "wrap",
-                            }}>
-
-                                {/* --- Primary CTA --- */}
-                                <Link href="/connect" className="cta-pill">
-                                    <span style={{
-                                        fontSize: "14px",
-                                        fontWeight: 700,
-                                        color: "#1a1a1a",
-                                    }}>
-                                         Connect With Us
-                                    </span>
-                                    <div className="cta-pill-icon">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M7 17L17 7M7 7h10v10" />
-                                        </svg>
-                                    </div>
-                                </Link>                                                             
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+          <a
+            href="tel:+919727780048"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "14px 28px",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              color: "#ffffff",
+              fontWeight: 700,
+              fontSize: "16px",
+              borderRadius: "8px",
+              backdropFilter: "blur(6px)",
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            <span>Call +91 9727780048</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
