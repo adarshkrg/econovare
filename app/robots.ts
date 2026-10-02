@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/"],
     },
-    sitemap: "https://greenfilament.com/sitemap.xml",
-    host: "https://greenfilament.com",
+    sitemap: "https://econovare.com/sitemap.xml",
+    host: "https://econovare.com",
   };
 }

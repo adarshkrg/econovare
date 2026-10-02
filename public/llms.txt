@@ -1,28 +1,20 @@
-# Green Filament
+# EcoNova Resources & Energy Private Limited
 
-> Odisha's trusted solar energy company based in Bhubaneswar. NSIC Registered, Start-up India recognized. 500+ projects across 12+ districts.
+> Shaping a Cleaner, Greener Tomorrow: World Air Pollution Control and Sustainable Energy Solutions.
+> Integrated platform uniting Renewable Energy, Geothermal Systems, Agriculture & Food Processing, Marine Resources, and Engineering.
 
-## About
-- About Us: https://greenfilament.com/about
+## Core Pages
+- Homepage: https://econovare.com
+- About Us: https://econovare.com/about
+- Core Offerings: https://econovare.com/offerings
+- Geothermal Heating & Cooling: https://econovare.com/geothermal
+- Contact & Feasibility Consultation: https://econovare.com/connect
 
-## Products
-- Rooftop Solar Systems: https://greenfilament.com/rooftop-solar
-- Solar Street Lighting: https://greenfilament.com/solar-street-lighting
-- Solar Water Pump: https://greenfilament.com/solar-water-pump
-- Solar Cooking System: https://greenfilament.com/solar-cooking
+## Leadership
+- Dr. Bijaya Krushna Behera, Director (Ph.D. Geology IIT Bombay, M.Tech IIT Kharagpur, Petroleum Engineering Univ of Tulsa, Founder Member CEGE Gandhinagar)
+- Ms. Minati Baral, Director (Director Minati Agro India, Food Processing, HR & Logistics)
 
-## Government Schemes
-- Solar Schemes Guide: https://greenfilament.com/schemes
-
-## Projects
-- Our Projects: https://greenfilament.com/projects
-
-## Blog
-- Solar Energy Blog: https://greenfilament.com/blogs
-- Rooftop Solar Guide: https://greenfilament.com/blogs/rooftop-solar
-- Solar Street Lights Guide: https://greenfilament.com/blogs/solar-street-lights
-- Solar Water Pump Guide: https://greenfilament.com/blogs/solar-water
-- Solar Cooking Guide: https://greenfilament.com/blogs/solar-cooking
-
-## Contact
-- Connect With Us: https://greenfilament.com/connect
+## Contact Information
+- Address: Plot No. 213/3, ARIHANT PALACE, Sector-20, Gandhinagar, Gujarat 382021
+- Phone: +91 9727780048
+- Email: info.econovare@gmail.com
