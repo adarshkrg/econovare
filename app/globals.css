@@ -1,4 +1,50 @@
-* {
+/* ============================================================
+   ECONOVA RESOURCES & ENERGY — GLOBAL STYLES
+   Design tokens defined as CSS custom properties so they are
+   never hard-coded in components.
+   ============================================================ */
+
+/* ── Google Fonts (Lora + Lato) — imported via layout.tsx <head>
+   these @font-face fallbacks keep the file self-contained ── */
+
+/* ── CSS Design Tokens ── */
+:root {
+  /* Brand greens */
+  --en-dark-green:    #1E3A2B;
+  --en-forest-green:  #1F3A21;
+  --en-olive:         #556B22;
+  --en-leaf:          #A8BF45;
+
+  /* Accent */
+  --en-teal:          #0E7C86;
+  --en-deep-teal:     #0B5D52;
+  --en-navy:          #17325E;
+
+  /* Background & surface */
+  --en-bg-soft:       #F7FDF0;
+  --en-bg-white:      #ffffff;
+  --en-bg-muted:      #F2F9EC;
+
+  /* Gradient stops */
+  --en-mint:          #7DF9E5;
+  --en-aqua-light:    #E0FFF5;
+
+  /* Amber accent (CTAs only, kept for contrast) */
+  --en-amber:         #F5A000;
+  --en-amber-dark:    #C97200;
+
+  /* Text */
+  --en-text-dark:     #1a1a1a;
+  --en-text-body:     #4a5568;
+  --en-text-muted:    #718096;
+
+  /* Border */
+  --en-border:        #D4E3C5;
+  --en-border-light:  #E8F0DC;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,10 +55,11 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #1a1a1a;
-  background: #ffffff;
+  font-family: 'Lato', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--en-text-dark);
+  background: var(--en-bg-white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -20,73 +67,120 @@ a {
   color: inherit;
 }
 
+/* ── Serif heading utility ── */
+.en-heading {
+  font-family: 'Lora', 'Playfair Display', Georgia, serif;
+}
+
 /* ── Section padding ── */
 .section-pad {
   padding: clamp(60px, 8vw, 100px) 0;
 }
 
-/* ── Navbar Responsive ── */
-@media (max-width: 768px) {
-  .nav-links { display: none !important; }
-  .nav-cta { display: none !important; }
-  .nav-hamburger { display: flex !important; }
-  .nav-mobile-menu { display: flex !important; }
+/* ── Container ── */
+.en-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 80px);
 }
 
+/* ── Navbar Responsive ── */
+@media (max-width: 768px) {
+  .nav-links       { display: none !important; }
+  .nav-cta         { display: none !important; }
+  .nav-hamburger   { display: flex !important; }
+  .nav-mobile-menu { display: flex !important; }
+}
 @media (min-width: 769px) {
-  .nav-hamburger { display: none !important; }
+  .nav-hamburger   { display: none !important; }
   .nav-mobile-menu { display: none !important; }
 }
 
-/* ── Prevent horizontal overflow ── */
-body {
-  overflow-x: hidden;
-}
-
-/* ── About section mobile cards ── */
+/* ── About section mobile/desktop card toggle ── */
 @media (max-width: 768px) {
-  .mobile-cards { display: grid !important; grid-template-columns: 1fr 1fr; }
+  .mobile-cards  { display: grid !important; grid-template-columns: 1fr 1fr; }
   .desktop-cards { display: none !important; }
-  .about-grid { display: flex !important; flex-direction: column !important; }
+  .about-grid    { display: flex !important; flex-direction: column !important; }
 }
-
 @media (min-width: 769px) {
-  .mobile-cards { display: none !important; }
+  .mobile-cards  { display: none !important; }
   .desktop-cards { display: grid !important; }
 }
 
 /* ── Navbar CTA hover ── */
+.nav-cta {
+  transition: all 0.2s;
+}
 .nav-cta:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
   transform: translateY(-1px);
   transition: all 0.2s;
 }
 
-.nav-cta {
-  transition: all 0.2s;
-}
-
+/* ── CTA button wrapper alignment ── */
 .cta-btn-wrapper {
   display: flex;
   justify-content: flex-start;
 }
-
 @media (max-width: 768px) {
   .cta-btn-wrapper {
     justify-content: center;
   }
 }
 
+/* ── Responsive 2-col grid used in About/Leadership ── */
 .custom-order-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
 }
-
 @media (max-width: 768px) {
   .custom-order-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+}
+
+/* ── EcoNova pill badge ── */
+.en-pill {
+  display: inline-block;
+  background: rgba(168, 191, 69, 0.15);
+  border: 0.5px solid var(--en-leaf);
+  color: var(--en-forest-green);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+/* ── Card hover lift ── */
+.en-card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.en-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(30, 58, 43, 0.12);
+}
+
+/* ── Gradient wave background ── */
+.en-wave-bg {
+  background: linear-gradient(135deg, var(--en-bg-soft) 0%, #E8F5DC 50%, var(--en-aqua-light) 100%);
+}
+
+/* ── Section heading accent underline ── */
+.en-accent-underline {
+  position: relative;
+  display: inline-block;
+}
+.en-accent-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--en-leaf);
 }

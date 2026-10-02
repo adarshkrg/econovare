@@ -1,67 +1,70 @@
 import type { Metadata } from "next";
+import { Lora, Lato } from "next/font/google";
 import "./globals.css";
 import SchemaOrg from "./components/SchemaOrg";
-import AnalyticsEvents from "./components/AnalyticsEvents";
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  variable: "--font-lato",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-
   /* ── Basic ── */
-  title: "Green Filament | Solar Energy Company in Bhubaneswar, Odisha",
-  description: "Green Filament is Odisha's trusted solar energy company. We deliver rooftop solar, solar pumps, street lights, solar cooking systems and more across Bhubaneswar and 12+ districts. NSIC Registered, Start-up India recognized.",
-
-  /* ── Keywords ── */
+  title: "EcoNova Resources & Energy | Sustainable Energy & Multi-Sector Solutions",
+  description:
+    "EcoNova Resources & Energy Private Limited — Shaping a Cleaner, Greener Tomorrow. Integrating Renewable Energy, Geothermal Heating & Cooling, Agriculture, Marine Resources, and Engineering.",
   keywords: [
-    "solar energy Odisha",
-    "rooftop solar Bhubaneswar",
-    "solar company Odisha",
-    "solar panels Bhubaneswar",
-    "solar pump Odisha",
-    "KUSUM scheme",
-    "KUSUM scheme Odisha",
-    "solar street light Odisha",
-    "solar cooking system",
-    "PM Surya Ghar Yojana",
-    "Green Filament solar",
-    "solar installation Bhubaneswar",
-    "renewable energy Odisha",
+    "EcoNova Resources & Energy",
+    "sustainable energy solutions",
+    "geothermal heating and cooling",
+    "world air pollution control",
+    "renewable energy projects",
+    "agro business sustainability",
+    "marine resources innovation",
+    "clean technology India",
+    "geothermal energy Gujarat",
+    "Gandhinagar clean energy",
   ],
+  authors: [{ name: "EcoNova Resources & Energy Private Limited" }],
+  creator: "EcoNova Resources & Energy Private Limited",
+  publisher: "EcoNova Resources & Energy Private Limited",
+  metadataBase: new URL("https://econovare.com"),
 
-  /* ── Canonical URL ── */
-  metadataBase: new URL("https://greenfilament.com"),
-  alternates: {
-    canonical: "/",
-  },
-
-  /* ── Open Graph — for WhatsApp, Facebook, LinkedIn previews ── */
+  /* ── Open Graph ── */
   openGraph: {
-    title: "Green Filament | Solar Energy Company in Bhubaneswar, Odisha",
-    description: "Odisha's trusted solar energy company — rooftop solar, pumps, street lights, solar cooking and more. 500+ projects across 12+ districts.",
-    url: "https://greenfilament.com",
-    siteName: "Green Filament",
+    type: "website",
+    locale: "en_IN",
+    url: "https://econovare.com",
+    siteName: "EcoNova Resources & Energy",
+    title: "EcoNova Resources & Energy | Shaping a Cleaner, Greener Tomorrow",
+    description:
+      "World Air Pollution Control and Sustainable Energy Solutions. Integrated multi-sector platform uniting renewable energy, geothermal systems, agriculture, marine resources, and engineering.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/logo.png",
         width: 1200,
         height: 630,
-        alt: "Green Filament Solar Energy Company Odisha",
+        alt: "EcoNova Resources & Energy Private Limited",
       },
     ],
-    locale: "en_IN",
-    type: "website",
   },
 
-  /* ── Twitter/X card ── */
+  /* ── Twitter ── */
   twitter: {
     card: "summary_large_image",
-    title: "Green Filament | Solar Energy Company in Bhubaneswar, Odisha",
-    description: "Odisha's trusted solar energy company — rooftop solar, pumps, street lights, solar cooking and more.",
-    images: ["/images/og-image.jpg"],
-  },
-
-  /* ── Favicon ── */
-  icons: {
-    icon: "/images/favicon.ico",
-    apple: "/images/apple-touch-icon.png",
+    title: "EcoNova Resources & Energy | Shaping a Cleaner, Greener Tomorrow",
+    description:
+      "Integrated multi-sector sustainability platform uniting renewable energy, geothermal systems, agriculture, and marine resources.",
+    images: ["/images/logo.png"],
   },
 
   /* ── Robots ── */
@@ -73,11 +76,6 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  verification: {
-  google: "LwpgsRnR9vkuBjFKXJMyTFrr3gjx0zNeH364fxNjGL8",
-
-},
-
 };
 
 export default function RootLayout({
@@ -86,23 +84,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-  <html lang="en" data-scroll-behavior="smooth">
-    <head>
-      <SchemaOrg />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6299WY2N0C" />
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-6299WY2N0C');
-        `
-      }} />
-    </head>
-    <body>
-  <AnalyticsEvents />
-  {children}
-</body>
-  </html>
-);
+    <html lang="en" data-scroll-behavior="smooth" className={`${lora.variable} ${lato.variable}`}>
+      <head>
+        <SchemaOrg />
+      </head>
+      <body className={lato.className}>
+        {children}
+      </body>
+    </html>
+  );
 }
