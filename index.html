@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoNova Resources &amp; Energy | Sustainable Energy &amp; Multi-Sector Solutions</title>
+  <meta name="description" content="EcoNova Resources &amp; Energy Private Limited — Shaping a Cleaner, Greener Tomorrow. Integrating Renewable Energy, Geothermal Heating &amp; Cooling, Agriculture, Marine Resources, and Engineering." />
+  <meta name="keywords" content="EcoNova Resources & Energy, sustainable energy solutions, geothermal heating and cooling, renewable energy projects, clean technology India" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EcoNova Resources &amp; Energy | Shaping a Cleaner, Greener Tomorrow" />
+  <meta property="og:description" content="World Air Pollution Control and Sustainable Energy Solutions." />
+  <meta property="og:image" content="public/images/logo.png" />
+  <link rel="icon" href="public/images/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700;800&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── CSS Design Tokens ── */
+    :root {
+      --en-dark-green:   #1E3A2B;
+      --en-forest-green: #1F3A21;
+      --en-olive:        #556B22;
+      --en-leaf:         #A8BF45;
+      --en-teal:         #0E7C86;
+      --en-deep-teal:    #0B5D52;
+      --en-navy:         #17325E;
+      --en-bg-soft:      #F7FDF0;
+      --en-bg-white:     #ffffff;
+      --en-bg-muted:     #F2F9EC;
+      --en-mint:         #7DF9E5;
+      --en-aqua-light:   #E0FFF5;
+      --en-amber:        #F5A000;
+      --en-text-dark:    #1a1a1a;
+      --en-text-body:    #4a5568;
+      --en-text-muted:   #718096;
+      --en-border:       #D4E3C5;
+      --en-border-light: #E8F0DC;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--en-text-dark);
+      background: var(--en-bg-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    .en-heading { font-family: 'Lora', Georgia, serif; }
+    .section-pad { padding: clamp(60px, 8vw, 100px) 0; }
+    .en-container { max-width: 1400px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 80px); }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: #ffffff; border-bottom: 0.5px solid var(--en-border); width: 100%;
+    }
+    .navbar-inner {
+      max-width: 1400px; margin: 0 auto; padding: 0 24px;
+      height: 80px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 52px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-link-item { font-size: 15px; color: var(--en-text-body); font-weight: 700; transition: color 0.2s; }
+    .nav-link-item:hover { color: var(--en-teal); }
+    .offerings-wrapper { position: relative; }
+    .offerings-trigger {
+      font-size: 15px; color: var(--en-text-body); font-weight: 700;
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; gap: 4px; padding: 0;
+      font-family: 'Lato', sans-serif; transition: color 0.2s;
+    }
+    .offerings-trigger:hover, .offerings-trigger.active { color: var(--en-teal); }
+    .dropdown-chevron { transition: transform 0.25s ease; }
+    .dropdown-chevron.open { transform: rotate(180deg); }
+    .offerings-dropdown {
+      position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%);
+      background: #fff; border-radius: 12px;
+      border: 0.5px solid var(--en-border);
+      box-shadow: 0 8px 28px rgba(30,58,43,0.12);
+      padding: 8px; min-width: 240px; z-index: 200;
+      display: none; animation: dropdownFadeIn 0.18s ease forwards;
+    }
+    .offerings-dropdown.open { display: block; }
+    @keyframes dropdownFadeIn {
+      from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+      to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+    .dropdown-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 8px;
+      color: var(--en-text-dark); font-size: 13px; font-weight: 600;
+      transition: background 0.15s;
+    }
+    .dropdown-item:hover { background: rgba(168,191,69,0.12); color: var(--en-forest-green); }
+    .nav-cta {
+      display: inline-flex; align-items: center;
+      background: #fff; border-radius: 40px; padding: 6px 6px 6px 18px;
+      box-shadow: 0 2px 12px rgba(30,58,43,0.1);
+      border: 1px solid var(--en-border); white-space: nowrap;
+      transition: all 0.2s; flex-shrink: 0;
+    }
+    .nav-cta:hover { box-shadow: 0 4px 20px rgba(14,124,134,0.25); transform: translateY(-1px); }
+    .nav-cta:hover .cta-arrow-circle { transform: rotate(45deg); }
+    .cta-arrow-circle {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--en-teal); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform 0.3s ease;
+    }
+    .nav-cta-label { font-size: 13px; font-weight: 700; color: var(--en-dark-green); margin-right: 10px; }
+    .nav-hamburger {
+      background: none; border: none; cursor: pointer; padding: 4px;
+      flex-direction: column; gap: 5px; display: none; align-items: flex-end;
+    }
+    .ham-line { display: block; height: 2.5px; border-radius: 3px; background: var(--en-leaf); transition: all 0.3s ease; }
+    .ham-line-1 { width: 14px; } .ham-line-2 { width: 19px; } .ham-line-3 { width: 24px; }
+    .nav-hamburger.open .ham-line-1 { width: 24px; transform: translateY(7.5px) rotate(45deg); }
+    .nav-hamburger.open .ham-line-2 { opacity: 0; width: 0; }
+    .nav-hamburger.open .ham-line-3 { width: 24px; transform: translateY(-7.5px) rotate(-45deg); }
+    .nav-mobile-menu {
+      background: #ffffff; border-top: 0.5px solid var(--en-border);
+      padding: 16px 24px 24px; flex-direction: column; gap: 18px; display: none;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .mobile-offerings-sub { margin-top: 10px; padding-left: 12px; display: none; flex-direction: column; gap: 10px; }
+    .mobile-offerings-sub.open { display: flex; }
+    .mobile-cta {
+      background: var(--en-teal); color: #fff; font-size: 13px; font-weight: 700;
+      padding: 12px; border-radius: 8px; text-align: center; display: block;
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none !important; }
+      .nav-hamburger { display: flex !important; }
+    }
+    @media (min-width: 769px) {
+      .nav-hamburger { display: none !important; }
+      .nav-mobile-menu { display: none !important; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 88vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--en-bg-soft) 0%, #E8F7F3 45%, var(--en-aqua-light) 100%);
+      padding: clamp(60px, 9vw, 120px) 0 clamp(60px, 8vw, 100px);
+    }
+    .hero-orb1 {
+      position: absolute; top: -15%; right: -10%; width: 550px; height: 550px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(125,249,229,0.45) 0%, rgba(224,255,245,0) 70%);
+      filter: blur(60px); pointer-events: none; z-index: 0;
+    }
+    .hero-orb2 {
+      position: absolute; bottom: -10%; left: -10%; width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,191,69,0.25) 0%, rgba(247,253,240,0) 70%);
+      filter: blur(50px); pointer-events: none; z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; text-align: center; width: 100%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px;
+      border-radius: 999px; background: rgba(14,124,134,0.1);
+      border: 1px solid rgba(14,124,134,0.25); color: var(--en-teal);
+      font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--en-teal); display: inline-block; }
+    .hero-h1 {
+      font-size: clamp(32px, 5.2vw, 62px); font-weight: 800; line-height: 1.15;
+      color: var(--en-dark-green); max-width: 1050px; margin: 0 auto 20px; letter-spacing: -0.5px;
+    }
+    .hero-sub { font-size: clamp(16px, 2.2vw, 22px); color: var(--en-deep-teal); font-weight: 600; max-width: 850px; margin: 0 auto 36px; line-height: 1.5; }
+    .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto 44px; }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px;
+      background: rgba(255,255,255,0.9); border-radius: 999px; border: 1px solid var(--en-border);
+      color: var(--en-dark-green); font-size: 14px; font-weight: 700;
+      box-shadow: 0 2px 8px rgba(30,58,43,0.06); transition: all 0.25s ease; backdrop-filter: blur(6px);
+    }
+    .hero-pill:hover { transform: translateY(-2px); border-color: var(--en-teal); color: var(--en-teal); box-shadow: 0 6px 16px rgba(14,124,134,0.15); }
+    .hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px;
+      background: var(--en-teal); color: #fff; border-radius: 8px; font-weight: 700; font-size: 16px;
+      box-shadow: 0 4px 14px rgba(14,124,134,0.35); transition: all 0.25s ease;
+    }
+    .btn-primary:hover { background: var(--en-deep-teal); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(11,93,82,0.4); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+      background: transparent; color: var(--en-dark-green); border: 2px solid var(--en-dark-green);
+      border-radius: 8px; font-weight: 700; font-size: 16px; transition: all 0.25s ease;
+    }
+    .btn-outline:hover { background: var(--en-dark-green); color: #fff; transform: translateY(-2px); }
+
+    /* ── SHARED ── */
+    .section-label { color: var(--en-teal); font-weight: 800; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase; display: inline-block; margin-bottom: 12px; }
+    .section-h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--en-dark-green); line-height: 1.2; margin-bottom: 18px; }
+    .section-lead { font-size: 17px; color: var(--en-text-body); line-height: 1.7; }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .max-800 { max-width: 800px; }
+
+    /* ── ABOUT ── */
+    .card-soft { background: var(--en-bg-soft); border: 1px solid var(--en-border); border-radius: 16px; padding: clamp(24px, 4vw, 40px); }
+    .card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+    .vision-banner { background: linear-gradient(135deg, var(--en-dark-green) 0%, var(--en-navy) 100%); border-radius: 20px; padding: clamp(32px, 5vw, 56px); color: #fff; box-shadow: 0 10px 30px rgba(30,58,43,0.15); }
+    .vision-badge { display: inline-block; padding: 4px 14px; border-radius: 999px; background: rgba(125,249,229,0.2); color: var(--en-mint); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .mission-card { background: var(--en-bg-muted); border: 1px solid var(--en-border-light); border-radius: 14px; padding: 28px 24px; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .mission-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(14,124,134,0.12); }
+    .mission-num { font-size: 28px; font-weight: 900; color: var(--en-teal); font-family: 'Lora', serif; margin-bottom: 12px; }
+
+    /* ── PROBLEM/SOLUTION ── */
+    .prob-card { background: #fff; border: 1px solid var(--en-border); border-radius: 14px; padding: 32px 26px; box-shadow: 0 4px 16px rgba(30,58,43,0.04); transition: transform 0.25s, box-shadow 0.25s; }
+    .prob-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(14,124,134,0.12); }
+    .prob-icon-box { width: 44px; height: 44px; border-radius: 10px; background: rgba(14,124,134,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 18px; }
+    .sol-card { background: #fff; border: 1px solid var(--en-border); border-radius: 16px; padding: 36px 30px; display: flex; flex-direction: column; box-shadow: 0 4px 18px rgba(30,58,43,0.05); }
+    .sol-badge { align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: rgba(85,107,34,0.12); color: var(--en-olive); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .clean-air-callout { background: var(--en-deep-teal); border-radius: 16px; padding: clamp(24px, 4vw, 40px); text-align: center; color: #fff; box-shadow: 0 8px 25px rgba(11,93,82,0.2); }
+    .adv-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .adv-list li { display: flex; align-items: flex-start; gap: 12px; }
+    .dot-bullet { color: var(--en-teal); font-weight: 900; }
+
+    /* ── OFFERINGS ── */
+    .offering-card { background: var(--en-bg-soft); border: 1px solid var(--en-border); border-radius: 18px; padding: 36px 30px; display: flex; flex-direction: column; transition: all 0.25s ease; }
+    .offering-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(30,58,43,0.08); }
+    .val-banner { background: linear-gradient(135deg, var(--en-forest-green) 0%, var(--en-deep-teal) 100%); border-radius: 20px; padding: clamp(36px, 5vw, 56px); color: #fff; text-align: center; box-shadow: 0 10px 30px rgba(11,93,82,0.2); }
+    .btn-mint { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; background: var(--en-mint); color: var(--en-dark-green); font-weight: 700; border-radius: 8px; font-size: 15px; transition: transform 0.2s; }
+    .btn-mint:hover { transform: translateY(-2px); }
+
+    /* ── MARKET ── */
+    .opp-card { background: #fff; border: 1px solid var(--en-border); border-radius: 14px; padding: 28px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 14px rgba(30,58,43,0.04); }
+    .tm-card { background: #fff; border: 1px solid var(--en-border); border-radius: 14px; padding: 28px 24px; box-shadow: 0 2px 10px rgba(30,58,43,0.04); }
+    .bm-card { background: #fff; border: 1px solid var(--en-border); border-radius: 16px; padding: 34px 28px; display: flex; flex-direction: column; box-shadow: 0 4px 18px rgba(30,58,43,0.05); }
+    .rm-card { background: #fff; border: 1px solid var(--en-border); border-radius: 16px; padding: 32px 24px; box-shadow: 0 2px 10px rgba(30,58,43,0.04); display: flex; flex-direction: column; }
+    .rm-step-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; background: rgba(14,124,134,0.1); color: var(--en-teal); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; align-self: flex-start; }
+
+    /* ── LEADERSHIP ── */
+    .leader-card { background: var(--en-bg-soft); border: 1px solid var(--en-border); border-radius: 20px; padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; box-shadow: 0 6px 20px rgba(30,58,43,0.05); transition: all 0.25s ease; }
+    .leader-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(14,124,134,0.12); }
+    .leader-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--en-forest-green) 0%, var(--en-teal) 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 4px 14px rgba(14,124,134,0.25); flex-shrink: 0; }
+
+    /* ── CTA ── */
+    .cta-section { background: linear-gradient(135deg, var(--en-dark-green) 0%, var(--en-navy) 100%); padding: clamp(60px, 8vw, 90px) 0; color: #fff; position: relative; overflow: hidden; }
+    .cta-orb { position: absolute; top: -50%; right: -10%; width: 450px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(125,249,229,0.25) 0%, transparent 70%); filter: blur(60px); pointer-events: none; }
+    .btn-teal { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--en-teal); color: #fff; font-weight: 700; font-size: 16px; border-radius: 8px; box-shadow: 0 4px 18px rgba(14,124,134,0.4); transition: all 0.2s; }
+    .btn-teal:hover { background: var(--en-deep-teal); transform: translateY(-2px); }
+    .btn-glass { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-weight: 700; font-size: 16px; border-radius: 8px; backdrop-filter: blur(6px); transition: all 0.2s; }
+    .btn-glass:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--en-dark-green); color: #fff; border-top: 3px solid var(--en-leaf); padding-top: clamp(50px, 7vw, 80px); padding-bottom: 30px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 50px; }
+    .footer-logo-box { width: 48px; height: 48px; border-radius: 8px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; padding: 2px; }
+    .footer-logo-box img { width: 44px; height: 44px; object-fit: contain; }
+    .footer-link { font-size: 14px; color: #D1E2D6; transition: color 0.2s; }
+    .footer-link:hover { color: var(--en-mint); }
+    .footer-col-title { font-size: 16px; font-weight: 800; color: var(--en-mint); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 13px; color: #A2C3AF; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════ NAVBAR ════════════ -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="nav-logo" aria-label="EcoNova Home">
+      <img src="public/images/logo.png" alt="EcoNova Resources &amp; Energy" />
+    </a>
+
+    <div class="nav-links">
+      <div class="offerings-wrapper" id="offeringsWrapper">
+        <button class="offerings-trigger" id="offeringsTrigger" aria-expanded="false" aria-haspopup="true">
+          Offerings
+          <svg class="dropdown-chevron" id="offeringsChevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="offerings-dropdown" id="offeringsDropdown" role="menu">
+          <a href="#offerings" class="dropdown-item" role="menuitem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--en-leaf)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Renewable Energy</a>
+          <a href="#offerings" class="dropdown-item" role="menuitem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--en-leaf)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Engineering &amp; Technology</a>
+          <a href="#offerings" class="dropdown-item" role="menuitem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--en-leaf)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Agriculture &amp; Food Processing</a>
+          <a href="#offerings" class="dropdown-item" role="menuitem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--en-leaf)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Marine &amp; Aquaculture</a>
+        </div>
+      </div>
+      <a href="#about" class="nav-link-item">About</a>
+      <a href="#market" class="nav-link-item">Market</a>
+      <a href="#leadership" class="nav-link-item">Leadership</a>
+      <a href="#contact" class="nav-link-item">Contact</a>
+    </div>
+
+    <a href="#contact" class="nav-cta">
+      <span class="nav-cta-label">Contact Us</span>
+      <div class="cta-arrow-circle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+    </a>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="ham-line ham-line-1"></span>
+      <span class="ham-line ham-line-2"></span>
+      <span class="ham-line ham-line-3"></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <div>
+      <button id="mobileOfferingsBtn" style="background:none;border:none;cursor:pointer;font-size:15px;color:var(--en-text-dark);font-weight:700;display:flex;align-items:center;gap:6px;padding:0;font-family:'Lato',sans-serif;width:100%;text-align:left;" aria-expanded="false">
+        Offerings
+        <svg class="dropdown-chevron" id="mobileOfferingsChevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--en-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-offerings-sub" id="mobileOfferingsSub">
+        <a href="#offerings" style="font-size:13px;color:var(--en-teal);font-weight:600;display:flex;align-items:center;gap:8px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--en-leaf);flex-shrink:0;display:inline-block;"></span>Renewable Energy</a>
+        <a href="#offerings" style="font-size:13px;color:var(--en-teal);font-weight:600;display:flex;align-items:center;gap:8px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--en-leaf);flex-shrink:0;display:inline-block;"></span>Engineering &amp; Technology</a>
+        <a href="#offerings" style="font-size:13px;color:var(--en-teal);font-weight:600;display:flex;align-items:center;gap:8px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--en-leaf);flex-shrink:0;display:inline-block;"></span>Agriculture &amp; Food Processing</a>
+        <a href="#offerings" style="font-size:13px;color:var(--en-teal);font-weight:600;display:flex;align-items:center;gap:8px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--en-leaf);flex-shrink:0;display:inline-block;"></span>Marine &amp; Aquaculture</a>
+      </div>
+    </div>
+    <a href="#about" style="font-size:15px;color:var(--en-text-dark);font-weight:700;">About</a>
+    <a href="#market" style="font-size:15px;color:var(--en-text-dark);font-weight:700;">Market</a>
+    <a href="#leadership" style="font-size:15px;color:var(--en-text-dark);font-weight:700;">Leadership</a>
+    <a href="#contact" style="font-size:15px;color:var(--en-text-dark);font-weight:700;">Contact</a>
+    <a href="#contact" class="mobile-cta">Contact Us</a>
+  </div>
+</nav>
+
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero" aria-label="EcoNova Hero">
+  <div class="hero-orb1" aria-hidden="true"></div>
+  <div class="hero-orb2" aria-hidden="true"></div>
+  <div class="en-container hero-content">
+    <div style="margin-bottom:20px;">
+      <span class="hero-badge"><span class="hero-badge-dot"></span>EcoNova Resources &amp; Energy Private Limited</span>
+    </div>
+    <h1 class="en-heading hero-h1">Shaping a Cleaner, Greener Tomorrow</h1>
+    <p class="hero-sub">World Air Pollution Control and Sustainable Energy Solutions</p>
+    <div class="hero-pills">
+      <a href="#offerings" class="hero-pill"><span>⚡</span><span>Renewable Energy</span></a>
+      <a href="#offerings" class="hero-pill"><span>🌱</span><span>Agriculture &amp; Food</span></a>
+      <a href="#offerings" class="hero-pill"><span>🌊</span><span>Marine &amp; Aquaculture</span></a>
+      <a href="#offerings" class="hero-pill"><span>⚙️</span><span>Engineering &amp; Tech</span></a>
+    </div>
+    <div class="hero-ctas">
+      <a href="#offerings" class="btn-primary">
+        <span>Explore Geothermal Solutions</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#contact" class="btn-outline"><span>Contact Us</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ ABOUT ════════════ -->
+<section id="about" class="section-pad" style="background:#fff;">
+  <div class="en-container">
+    <div class="text-center max-800 mx-auto" style="margin-bottom:60px;">
+      <span class="section-label">About EcoNova</span>
+      <h2 class="en-heading section-h2">An Integrated Sustainability Platform</h2>
+      <p class="section-lead">EcoNova Resources &amp; Energy Private Limited unites renewable energy, agriculture, marine resources, and advanced technology into one organization, rather than treating each sector in isolation.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;margin-bottom:70px;">
+      <div class="card-soft">
+        <div class="card-icon" style="background:var(--en-teal);">🌐</div>
+        <h3 class="en-heading" style="font-size:22px;font-weight:700;color:var(--en-dark-green);margin-bottom:14px;">Integrated Sustainability Platform</h3>
+        <p style="color:var(--en-text-body);font-size:16px;line-height:1.7;">EcoNova unites renewable energy, agriculture, marine resources and advanced technology into one organization, rather than treating each sector in isolation. This cross-sector synergy unlocks high operational efficiencies and comprehensive decarbonization models.</p>
+      </div>
+      <div class="card-soft">
+        <div class="card-icon" style="background:var(--en-forest-green);">📜</div>
+        <h3 class="en-heading" style="font-size:22px;font-weight:700;color:var(--en-dark-green);margin-bottom:14px;">Purpose-Built on a Clear Mandate</h3>
+        <p style="color:var(--en-text-body);font-size:16px;line-height:1.7;">Our objects span renewable energy, manufacturing, agriculture, marine resources, research and technology partnerships, giving us the legal and operational scope to build a true multi-sector ecosystem for sustainable growth.</p>
+      </div>
+    </div>
+
+    <div class="vision-banner" style="margin-bottom:70px;">
+      <div class="vision-badge">Our Vision</div>
+      <h3 class="en-heading" style="font-size:clamp(22px,3.2vw,32px);font-weight:700;line-height:1.45;color:#fff;max-width:1100px;">
+        &ldquo;To become a globally trusted leader in sustainable resource innovation by integrating renewable energy, agriculture, marine resources, and advanced technologies to build a cleaner, greener and more prosperous future.&rdquo;
+      </h3>
+    </div>
+
+    <div>
+      <div class="text-center" style="margin-bottom:40px;">
+        <span class="section-label">Our Mission</span>
+        <h3 class="en-heading" style="font-size:clamp(24px,3.2vw,36px);font-weight:800;color:var(--en-dark-green);">5 Strategic Pillars Driving Our Impact</h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
+        <div class="mission-card"><div class="mission-num">01</div><h4 style="font-size:18px;font-weight:700;color:var(--en-dark-green);margin-bottom:10px;">Clean Energy Transition</h4><p style="font-size:15px;color:var(--en-text-body);line-height:1.6;">Develop innovative renewable energy solutions that accelerate the transition to clean energy.</p></div>
+        <div class="mission-card"><div class="mission-num">02</div><h4 style="font-size:18px;font-weight:700;color:var(--en-dark-green);margin-bottom:10px;">Air Pollution Control</h4><p style="font-size:15px;color:var(--en-text-body);line-height:1.6;">Develop innovative solutions to reduce and control air pollution for a cleaner environment.</p></div>
+        <div class="mission-card"><div class="mission-num">03</div><h4 style="font-size:18px;font-weight:700;color:var(--en-dark-green);margin-bottom:10px;">Sustainable Agri &amp; Marine</h4><p style="font-size:15px;color:var(--en-text-body);line-height:1.6;">Promote sustainable agriculture, food processing, and marine and aquaculture through modern technologies.</p></div>
+        <div class="mission-card"><div class="mission-num">04</div><h4 style="font-size:18px;font-weight:700;color:var(--en-dark-green);margin-bottom:10px;">Responsible Engineering</h4><p style="font-size:15px;color:var(--en-text-body);line-height:1.6;">Design and commercialize environmentally responsible products and engineering solutions.</p></div>
+        <div class="mission-card"><div class="mission-num">05</div><h4 style="font-size:18px;font-weight:700;color:var(--en-dark-green);margin-bottom:10px;">Research &amp; Partnerships</h4><p style="font-size:15px;color:var(--en-text-body);line-height:1.6;">Drive research, innovation, and strategic partnerships to create long-term economic, environmental, and social value.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ PROBLEM / SOLUTION ════════════ -->
+<section id="problem-solution" class="section-pad" style="background:var(--en-bg-soft);">
+  <div class="en-container">
+    <div class="text-center max-800 mx-auto" style="margin-bottom:50px;">
+      <span class="section-label">The Challenge</span>
+      <h2 class="en-heading section-h2">Addressing Critical Market Gaps</h2>
+      <p class="section-lead">Modern climate and resource challenges can no longer be solved with fragmented, siloed models.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:80px;">
+      <div class="prob-card"><div class="prob-icon-box">⚡</div><h3 style="font-size:19px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;line-height:1.35;">Underutilization of Environment-Friendly Energy</h3><p style="color:var(--en-text-body);font-size:15px;line-height:1.65;">Lack of awareness and utilization of geothermal energy, along with underutilization of solar and biomass technology at the domestic and decentralized level.</p></div>
+      <div class="prob-card"><div class="prob-icon-box">🔄</div><h3 style="font-size:19px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;line-height:1.35;">Need for Integrated Sustainability Solutions</h3><p style="color:var(--en-text-body);font-size:15px;line-height:1.65;">Climate change and escalating resource challenges require holistic, combined solutions instead of isolated, single-sector approaches that miss broader ecological impact.</p></div>
+      <div class="prob-card"><div class="prob-icon-box">🔬</div><h3 style="font-size:19px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;line-height:1.35;">Underutilization of Innovation &amp; Technology</h3><p style="color:var(--en-text-body);font-size:15px;line-height:1.65;">A systemic lack of effective applied research, seamless technology transfer, and agile commercialization limits scalable and sustainable economic growth.</p></div>
+      <div class="prob-card"><div class="prob-icon-box">🌾</div><h3 style="font-size:19px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;line-height:1.35;">Limited Value Addition in Agriculture &amp; Marine</h3><p style="color:var(--en-text-body);font-size:15px;line-height:1.65;">Crucial agricultural and marine resources frequently lack modern processing facilities, technology adoption, and high-value commercialization opportunities.</p></div>
+    </div>
+
+    <div class="text-center max-800 mx-auto" style="margin-bottom:50px;">
+      <span class="section-label">The EcoNova Approach</span>
+      <h2 class="en-heading section-h2">Our Integrated Solution</h2>
+      <p class="section-lead">Three interconnected pillars providing high-efficiency clean energy and resource sustainability.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-bottom:50px;">
+      <div class="sol-card"><span class="sol-badge">Energy</span><h3 class="en-heading" style="font-size:21px;font-weight:700;color:var(--en-dark-green);margin-bottom:14px;line-height:1.35;">Clean Energy Solutions</h3><p style="color:var(--en-text-body);font-size:15px;line-height:1.7;">Advancing solar, wind, geothermal, biomass, and hydrogen technologies for resilient, low-carbon power and thermal needs.</p></div>
+      <div class="sol-card"><span class="sol-badge">Ecosystem</span><h3 class="en-heading" style="font-size:21px;font-weight:700;color:var(--en-dark-green);margin-bottom:14px;line-height:1.35;">Integrated Sustainable Resource Platform</h3><p style="color:var(--en-text-body);font-size:15px;line-height:1.7;">A unified multi-sector ecosystem combining renewable energy, agriculture, marine resources, food processing, and advanced technologies.</p></div>
+      <div class="sol-card"><span class="sol-badge">Engineering</span><h3 class="en-heading" style="font-size:21px;font-weight:700;color:var(--en-dark-green);margin-bottom:14px;line-height:1.35;">Technology-Driven Engineering Solutions</h3><p style="color:var(--en-text-body);font-size:15px;line-height:1.7;">Designing, manufacturing, and commercializing electrical, electronic, and engineering products backed by research and rigorous engineering.</p></div>
+    </div>
+
+    <div class="clean-air-callout" style="margin-bottom:80px;">
+      <div style="font-size:26px;margin-bottom:12px;">🍃</div>
+      <p class="en-heading" style="font-size:clamp(18px,2.5vw,24px);font-weight:700;max-width:920px;margin:0 auto;line-height:1.5;color:#fff;">&ldquo;Providing innovative solutions for removal of world air pollution substantially so that our next generation breathe fresh air.&rdquo;</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--en-border);border-radius:20px;padding:clamp(32px,5vw,56px);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center;">
+        <div>
+          <span class="section-label" style="font-size:13px;">Why EcoNova</span>
+          <h3 class="en-heading" style="font-size:clamp(24px,3.2vw,36px);font-weight:800;color:var(--en-dark-green);line-height:1.25;margin-bottom:16px;">Multi-Sector Ecosystem vs. Single-Sector Silos</h3>
+          <p style="color:var(--en-text-body);font-size:16px;line-height:1.7;margin-bottom:20px;">Unlike single-sector players that concentrate purely on standalone EPC contracts, utility solar generation, or general infrastructure, EcoNova uniquely combines multiple sustainability verticals under one umbrella.</p>
+          <p style="color:var(--en-text-body);font-size:16px;line-height:1.7;">Our R&amp;D-driven approach couples scientific research with agile technology commercialization and end-to-end execution, delivering integrated resource ecosystems that produce higher economic resilience and deeper environmental impact.</p>
+        </div>
+        <div style="background:var(--en-bg-soft);border-radius:14px;padding:30px;border:1px solid var(--en-border-light);">
+          <h4 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:18px;">EcoNova Advantages</h4>
+          <ul class="adv-list">
+            <li><span class="dot-bullet">✓</span><div><strong style="color:var(--en-dark-green);font-size:15px;">Cross-Sector Synergy: </strong><span style="color:var(--en-text-body);font-size:14px;">Energy, agriculture, marine, and engineering integrated into closed loops.</span></div></li>
+            <li><span class="dot-bullet">✓</span><div><strong style="color:var(--en-dark-green);font-size:15px;">Strong Academic &amp; Scientific Leadership: </strong><span style="color:var(--en-text-body);font-size:14px;">Decades of deep geological and resource innovation pedigree.</span></div></li>
+            <li><span class="dot-bullet">✓</span><div><strong style="color:var(--en-dark-green);font-size:15px;">Geothermal &amp; Clean Tech Pioneer: </strong><span style="color:var(--en-text-body);font-size:14px;">Specialized knowledge in advanced geothermal heating and cooling.</span></div></li>
+            <li><span class="dot-bullet">✓</span><div><strong style="color:var(--en-dark-green);font-size:15px;">Commercialization Focus: </strong><span style="color:var(--en-text-body);font-size:14px;">Translating cutting-edge research into market-ready, scalable products.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ OFFERINGS ════════════ -->
+<section id="offerings" class="section-pad" style="background:#fff;">
+  <div class="en-container">
+    <div class="text-center max-800 mx-auto" style="margin-bottom:50px;">
+      <span class="section-label">Core Offerings</span>
+      <h2 class="en-heading section-h2">Integrated Solutions Across 4 Sectors</h2>
+      <p class="section-lead">Leveraging engineering excellence and natural resources to deliver high-yield, environmentally responsible outcomes.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;margin-bottom:60px;">
+      <div class="offering-card" data-border="var(--en-teal)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><div style="width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,0.9);border:1px solid var(--en-border);display:flex;align-items:center;justify-content:center;font-size:24px;">⚡</div><span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:4px 12px;border-radius:999px;background:#fff;border:1px solid var(--en-border-light);color:var(--en-teal);">Clean Energy</span></div>
+        <h3 class="en-heading" style="font-size:22px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;">Renewable Energy Projects</h3>
+        <p style="color:var(--en-text-body);font-size:15px;line-height:1.65;margin-bottom:20px;">Comprehensive project development across solar, wind, geothermal, biomass, and green hydrogen technologies.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:auto;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-teal);font-weight:bold;">•</span><span>Solar photovoltaic and thermal system development</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-teal);font-weight:bold;">•</span><span>Pioneering geothermal cooling &amp; heating systems</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-teal);font-weight:bold;">•</span><span>Wind energy site assessment and plant integration</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-teal);font-weight:bold;">•</span><span>Biomass to energy and clean hydrogen pathways</span></li></ul>
+      </div>
+      <div class="offering-card" data-border="var(--en-forest-green)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><div style="width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,0.9);border:1px solid var(--en-border);display:flex;align-items:center;justify-content:center;font-size:24px;">⚙️</div><span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:4px 12px;border-radius:999px;background:#fff;border:1px solid var(--en-border-light);color:var(--en-forest-green);">Turnkey EPC</span></div>
+        <h3 class="en-heading" style="font-size:22px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;">Engineering &amp; Technology</h3>
+        <p style="color:var(--en-text-body);font-size:15px;line-height:1.65;margin-bottom:20px;">Turnkey engineering solutions including specialized equipment manufacturing, EPC execution, technical consulting, and lifecycle O&amp;M services.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:auto;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-forest-green);font-weight:bold;">•</span><span>Turnkey EPC (Engineering, Procurement, Construction)</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-forest-green);font-weight:bold;">•</span><span>Electrical, electronic &amp; electromechanical equipment manufacturing</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-forest-green);font-weight:bold;">•</span><span>Technical feasibility, energy audits &amp; consultancy</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-forest-green);font-weight:bold;">•</span><span>Lifecycle operations and maintenance (O&amp;M) management</span></li></ul>
+      </div>
+      <div class="offering-card" data-border="var(--en-olive)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><div style="width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,0.9);border:1px solid var(--en-border);display:flex;align-items:center;justify-content:center;font-size:24px;">🌱</div><span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:4px 12px;border-radius:999px;background:#fff;border:1px solid var(--en-border-light);color:var(--en-olive);">Agri-Tech</span></div>
+        <h3 class="en-heading" style="font-size:22px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;">Agriculture &amp; Food Processing</h3>
+        <p style="color:var(--en-text-body);font-size:15px;line-height:1.65;margin-bottom:20px;">Transforming agribusiness through precision farming, technological value addition, modern processing, and international-standard food packaging.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:auto;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-olive);font-weight:bold;">•</span><span>Precision agriculture and climate-smart farming solutions</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-olive);font-weight:bold;">•</span><span>Advanced post-harvest management and processing facilities</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-olive);font-weight:bold;">•</span><span>High-value agricultural products and packaging</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-olive);font-weight:bold;">•</span><span>Agro trading and sustainable global supply chain networks</span></li></ul>
+      </div>
+      <div class="offering-card" data-border="var(--en-navy)">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;"><div style="width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,0.9);border:1px solid var(--en-border);display:flex;align-items:center;justify-content:center;font-size:24px;">🌊</div><span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:4px 12px;border-radius:999px;background:#fff;border:1px solid var(--en-border-light);color:var(--en-navy);">Blue Economy</span></div>
+        <h3 class="en-heading" style="font-size:22px;font-weight:700;color:var(--en-dark-green);margin-bottom:12px;">Marine &amp; Aquaculture</h3>
+        <p style="color:var(--en-text-body);font-size:15px;line-height:1.65;margin-bottom:20px;">Sustainable marine resource development, modern aquaculture cultivation technologies, value-added processing, and export-ready seafood products.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:auto;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-navy);font-weight:bold;">•</span><span>Scientific aquaculture systems and water quality management</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-navy);font-weight:bold;">•</span><span>Sustainable marine resource harvesting and development</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-navy);font-weight:bold;">•</span><span>State-of-the-art cold-chain, processing &amp; quality control</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;"><span style="color:var(--en-navy);font-weight:bold;">•</span><span>Export-ready marine product commercialization</span></li></ul>
+      </div>
+    </div>
+    <div class="val-banner">
+      <span style="display:inline-block;padding:4px 16px;border-radius:999px;background:rgba(125,249,229,0.2);color:var(--en-mint);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;">Our Core Value Proposition</span>
+      <h3 class="en-heading" style="font-size:clamp(22px,3.4vw,34px);font-weight:700;line-height:1.4;max-width:1000px;margin:0 auto 24px;color:#fff;">&ldquo;Complete sustainable resource ecosystems, not isolated products, that maximize efficiency and minimize environmental impact.&rdquo;</h3>
+      <a href="#offerings" class="btn-mint"><span>Learn About Geothermal Heating &amp; Cooling</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ MARKET ════════════ -->
+<section id="market" class="section-pad" style="background:var(--en-bg-soft);">
+  <div class="en-container">
+    <div class="text-center max-800 mx-auto" style="margin-bottom:50px;">
+      <span class="section-label">Market Opportunity</span>
+      <h2 class="en-heading section-h2">Key Demand Drivers Across Core Verticals</h2>
+      <p class="section-lead">Alignment with national green missions, industrial decarbonization, and resource security.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:80px;">
+      <div class="opp-card"><div style="font-size:24px;margin-bottom:14px;">⚡</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Renewable Energy</h3><p style="font-size:13px;font-weight:700;color:var(--en-teal);margin-bottom:12px;">Solar, wind, geothermal, biomass, hydrogen</p><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Growing global transition to clean energy driven by government initiatives, carbon reduction goals, and demand for sustainable power.</p></div>
+      <div class="opp-card"><div style="font-size:24px;margin-bottom:14px;">⚙️</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Engineering &amp; Manufacturing</h3><p style="font-size:13px;font-weight:700;color:var(--en-teal);margin-bottom:12px;">Electrical, electronic, electromechanical equipment</p><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Rising demand for industrial equipment, automation, and high-efficiency energy products.</p></div>
+      <div class="opp-card"><div style="font-size:24px;margin-bottom:14px;">🌱</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Agriculture &amp; Food Processing</h3><p style="font-size:13px;font-weight:700;color:var(--en-teal);margin-bottom:12px;">Agri-tech, value-added products, agro exports</p><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Surging demand for processed food, climate-resilient sustainable farming, and modern supply-chain improvements.</p></div>
+      <div class="opp-card"><div style="font-size:24px;margin-bottom:14px;">🌊</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Marine &amp; Aquaculture</h3><p style="font-size:13px;font-weight:700;color:var(--en-teal);margin-bottom:12px;">Aquaculture technology, marine products &amp; processing</p><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Growing seafood consumption, rising demand for export-grade marine products, and sustainable aquaculture management.</p></div>
+      <div class="opp-card"><div style="font-size:24px;margin-bottom:14px;">🌍</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Sustainability &amp; Climate Tech</h3><p style="font-size:13px;font-weight:700;color:var(--en-teal);margin-bottom:12px;">ESG, circular economy, green tech, air pollution control</p><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Rising institutional investment in sustainable technologies, circular economy mandates, and air pollution control.</p></div>
+    </div>
+
+    <div class="text-center max-800 mx-auto" style="margin-bottom:50px;">
+      <span class="section-label">Target Customers</span>
+      <h2 class="en-heading section-h2">Who We Serve</h2>
+      <p class="section-lead">Serving a diversified customer base across institutional, industrial, and agricultural segments.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:80px;">
+      <div class="tm-card"><div style="font-size:28px;margin-bottom:14px;">🏛️</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Government &amp; Public Sector</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Central &amp; state ministries, PSUs, Smart Cities, municipal corporations</p></div>
+      <div class="tm-card"><div style="font-size:28px;margin-bottom:14px;">🏭</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Industrial &amp; Commercial</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Manufacturers, RE developers, infrastructure &amp; EPC contractors</p></div>
+      <div class="tm-card"><div style="font-size:28px;margin-bottom:14px;">🌾</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Agriculture &amp; Agri-Business</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Farmer Producer Organizations (FPOs), agribusinesses, food processors, cold-chain operators</p></div>
+      <div class="tm-card"><div style="font-size:28px;margin-bottom:14px;">🚢</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Marine &amp; Coastal Enterprises</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Fisheries, aquaculture enterprises, commercial seafood processors</p></div>
+      <div class="tm-card"><div style="font-size:28px;margin-bottom:14px;">🎓</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Institutional &amp; Research</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Universities, research bodies, CSR foundations, development agencies</p></div>
+      <div class="tm-card"><div style="font-size:28px;margin-bottom:14px;">🌐</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">International Markets</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Global RE developers, import-export trading partners, ESG investors</p></div>
+    </div>
+
+    <div class="text-center max-800 mx-auto" style="margin-bottom:50px;">
+      <span class="section-label">Business Model</span>
+      <h2 class="en-heading section-h2">Diversified Revenue &amp; Activity Streams</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;margin-bottom:80px;">
+      <div class="bm-card"><h3 class="en-heading" style="font-size:19px;font-weight:800;color:var(--en-dark-green);margin-bottom:20px;border-bottom:2px solid var(--en-border-light);padding-bottom:12px;">01. Renewable Energy &amp; Engineering Solutions</h3><div style="margin-bottom:18px;"><span style="font-size:12px;font-weight:800;color:var(--en-forest-green);text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:6px;">Key Activities:</span><p style="font-size:14px;color:var(--en-text-body);line-height:1.65;">Solar, wind, biomass, geothermal, and hydrogen project development; turnkey EPC; manufacturing of electrical and electronic products; lifecycle operations and maintenance (O&amp;M).</p></div><div style="margin-top:auto;"><span style="font-size:12px;font-weight:800;color:var(--en-teal);text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:6px;">Revenue Models:</span><p style="font-size:14px;color:var(--en-text-dark);font-weight:600;line-height:1.65;">EPC contracts, equipment sales, ongoing maintenance contracts, power generation revenue, and renewable energy certificates (RECs).</p></div></div>
+      <div class="bm-card"><h3 class="en-heading" style="font-size:19px;font-weight:800;color:var(--en-dark-green);margin-bottom:20px;border-bottom:2px solid var(--en-border-light);padding-bottom:12px;">02. Sustainable Agriculture, Food Processing &amp; Agro Business</h3><div style="margin-bottom:18px;"><span style="font-size:12px;font-weight:800;color:var(--en-forest-green);text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:6px;">Key Activities:</span><p style="font-size:14px;color:var(--en-text-body);line-height:1.65;">Agricultural production, high-efficiency food processing, modern packaging, value-added agro products, domestic trading, and international exports.</p></div><div style="margin-top:auto;"><span style="font-size:12px;font-weight:800;color:var(--en-teal);text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:6px;">Revenue Models:</span><p style="font-size:14px;color:var(--en-text-dark);font-weight:600;line-height:1.65;">Processed food and agro product sales, export contracts, agri-tech solutions, and integrated supply-chain partnerships.</p></div></div>
+      <div class="bm-card"><h3 class="en-heading" style="font-size:19px;font-weight:800;color:var(--en-dark-green);margin-bottom:20px;border-bottom:2px solid var(--en-border-light);padding-bottom:12px;">03. Marine Resources, Technology &amp; Innovation Services</h3><div style="margin-bottom:18px;"><span style="font-size:12px;font-weight:800;color:var(--en-forest-green);text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:6px;">Key Activities:</span><p style="font-size:14px;color:var(--en-text-body);line-height:1.65;">Modern aquaculture solutions, sustainable marine products, technology development, technical consultancy, licensing, and joint research collaborations.</p></div><div style="margin-top:auto;"><span style="font-size:12px;font-weight:800;color:var(--en-teal);text-transform:uppercase;letter-spacing:0.5px;display:block;margin-bottom:6px;">Revenue Models:</span><p style="font-size:14px;color:var(--en-text-dark);font-weight:600;line-height:1.65;">Marine product sales, aquaculture technologies, engineering consultancy fees, technology licensing, IP commercialization, and innovation projects.</p></div></div>
+    </div>
+
+    <div>
+      <div class="text-center max-800 mx-auto" style="margin-bottom:50px;">
+        <span class="section-label">Strategic Roadmap</span>
+        <h2 class="en-heading section-h2">Aim to Scale Up: 4 Horizons</h2>
+        <p class="section-lead">A disciplined, phased trajectory from regional execution to international impact.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;">
+        <div class="rm-card"><div class="rm-step-badge">Phase 1</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:10px;line-height:1.35;">Expand Renewable Energy &amp; Engineering</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.65;">Scale clean-energy projects (solar, geothermal, wind) and technology-driven engineering solutions across regional and industrial hubs.</p></div>
+        <div class="rm-card"><div class="rm-step-badge">Phase 2</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:10px;line-height:1.35;">Strengthen Agri-Food &amp; Marine Businesses</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.65;">Expand food processing facilities, value-added agriculture, scientific aquaculture, and export supply-chain networks.</p></div>
+        <div class="rm-card"><div class="rm-step-badge">Phase 3</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:10px;line-height:1.35;">Accelerate R&amp;D &amp; Technology Commercialization</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.65;">Develop innovative proprietary products, file intellectual property, and industrialize scalable clean-tech &amp; air-pollution removal technologies.</p></div>
+        <div class="rm-card"><div class="rm-step-badge">Phase 4</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:10px;line-height:1.35;">Build Global Partnerships &amp; Markets</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.65;">Establish strategic partnerships, international joint ventures, Public-Private Partnerships (PPPs), exports, and cross-border collaborations.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ LEADERSHIP ════════════ -->
+<section id="leadership" class="section-pad" style="background:#fff;">
+  <div class="en-container">
+    <div class="text-center max-800 mx-auto" style="margin-bottom:60px;">
+      <span class="section-label">Board of Directors</span>
+      <h2 class="en-heading section-h2">Visionary Scientific &amp; Operational Leadership</h2>
+      <p class="section-lead">Combining world-class geological and energy research credentials with proven agribusiness execution.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:36px;max-width:1150px;margin:0 auto;">
+      <div class="leader-card">
+        <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;"><div class="leader-avatar">BKB</div><div><h3 class="en-heading" style="font-size:22px;font-weight:800;color:var(--en-dark-green);margin-bottom:4px;">Dr. Bijaya Krushna Behera</h3><span style="font-size:14px;font-weight:700;color:var(--en-teal);text-transform:uppercase;letter-spacing:0.5px;">Director</span></div></div>
+        <p style="font-size:15px;color:var(--en-text-body);line-height:1.65;margin-bottom:20px;">Dr. Behera brings over three decades of pioneering academic and industrial leadership in geological sciences, subsurface resource exploration, and geothermal energy technologies. His foundational research and institutional contributions are instrumental in advancing EcoNova's clean energy and geothermal systems.</p>
+        <div style="margin-top:auto;padding-top:16px;border-top:1px solid var(--en-border);"><h4 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--en-forest-green);margin-bottom:10px;">Qualifications &amp; Background:</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:8px;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>Ph.D. Geology, IIT Bombay (1994)</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>M.Tech Applied Geology, IIT Kharagpur (1989), 1st Class</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>M.Sc. Applied Geology, IIT Bombay (1987), 1st Class</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>Petroleum Engineering Program, University of Tulsa, USA (2012)</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>Founder Member, Centre of Excellence for Geothermal Energy (CEGE), Gandhinagar</span></li></ul></div>
+      </div>
+      <div class="leader-card">
+        <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;"><div class="leader-avatar">MB</div><div><h3 class="en-heading" style="font-size:22px;font-weight:800;color:var(--en-dark-green);margin-bottom:4px;">Ms. Minati Baral</h3><span style="font-size:14px;font-weight:700;color:var(--en-teal);text-transform:uppercase;letter-spacing:0.5px;">Director</span></div></div>
+        <p style="font-size:15px;color:var(--en-text-body);line-height:1.65;margin-bottom:20px;">Ms. Baral spearheads EcoNova's sustainable agriculture and marine ventures. With profound entrepreneurial experience in agro-industrial supply chains and food processing standards, she oversees operational excellence, farmer networks, and export quality controls.</p>
+        <div style="margin-top:auto;padding-top:16px;border-top:1px solid var(--en-border);"><h4 style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--en-forest-green);margin-bottom:10px;">Qualifications &amp; Background:</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:8px;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>Director, Minati Agro India Pvt. Ltd.</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>Extensive experience in Food Processing Technologies</span></li><li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.45;"><span class="dot-bullet">•</span><span>Specialized in Agricultural HR, Operations &amp; Logistics</span></li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ CTA BANNER ════════════ -->
+<section id="contact" class="cta-section">
+  <div class="cta-orb" aria-hidden="true"></div>
+  <div class="en-container" style="position:relative;z-index:1;text-align:center;">
+    <span style="display:inline-block;padding:6px 18px;border-radius:999px;background:rgba(125,249,229,0.15);color:var(--en-mint);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;">Partner With EcoNova</span>
+    <h2 class="en-heading" style="font-size:clamp(28px,4.5vw,46px);font-weight:800;color:#fff;max-width:900px;margin:0 auto 20px;line-height:1.25;">Ready to Accelerate Your Clean Energy &amp; Sustainable Resource Initiatives?</h2>
+    <p style="font-size:clamp(16px,2vw,19px);color:var(--en-aqua-light);max-width:750px;margin:0 auto 36px;line-height:1.6;">Connect with our multidisciplinary engineering, agriculture, and energy specialists to explore pilot projects, turnkey EPC, or technological collaborations.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;">
+      <a href="mailto:info.econovare@gmail.com" class="btn-teal"><span>Get in Touch</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="tel:+919727780048" class="btn-glass"><span>Call +91 9727780048</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="en-container">
+    <div class="footer-grid">
+      <div style="max-width:360px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <div class="footer-logo-box"><img src="public/images/logo.png" alt="EcoNova Logo" /></div>
+          <div><span style="font-size:17px;font-weight:800;letter-spacing:0.5px;display:block;line-height:1.2;color:#fff;">ECONOVA</span><span style="font-size:11px;color:var(--en-leaf);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Resources &amp; Energy</span></div>
+        </div>
+        <p style="font-size:14px;color:#D1E2D6;line-height:1.6;margin-bottom:14px;"><strong>EcoNova Resources &amp; Energy Private Limited</strong><br>Shaping a Cleaner, Greener Tomorrow: World Air Pollution Control and Sustainable Energy Solutions.</p>
+        <p style="font-size:12px;color:var(--en-leaf);font-weight:600;">Renewable Energy | Agricultural Products | Marine Resources</p>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Core Verticals</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li><a href="#offerings" class="footer-link">Renewable Energy Projects</a></li>
+          <li><a href="#offerings" class="footer-link">Engineering &amp; Technology</a></li>
+          <li><a href="#offerings" class="footer-link">Agriculture &amp; Food Processing</a></li>
+          <li><a href="#offerings" class="footer-link">Marine &amp; Aquaculture</a></li>
+          <li><a href="#offerings" class="footer-link">Geothermal Heating &amp; Cooling</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li><a href="#" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About Us</a></li>
+          <li><a href="#market" class="footer-link">Market &amp; Vision</a></li>
+          <li><a href="#leadership" class="footer-link">Board of Directors</a></li>
+          <li><a href="#contact" class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact Office</h4>
+        <div style="display:flex;flex-direction:column;gap:14px;font-size:14px;color:#D1E2D6;">
+          <div><strong style="color:#fff;display:block;margin-bottom:4px;">Registered Address:</strong><span>Plot No. 213/3, ARIHANT PALACE, Sector-20, Gandhinagar, Gujarat 382021</span><div style="margin-top:6px;"><a href="https://maps.google.com/?q=Plot+No.+213/3,+ARIHANT+PALACE,+Sector-20,+Gandhinagar,+Gujarat+382021" target="_blank" rel="noopener noreferrer" style="color:var(--en-mint);font-size:13px;text-decoration:underline;font-weight:600;">View on Google Maps ↗</a></div></div>
+          <div><strong style="color:#fff;display:block;margin-bottom:2px;">Phone:</strong><a href="tel:+919727780048" class="footer-link">+91 9727780048</a></div>
+          <div><strong style="color:#fff;display:block;margin-bottom:2px;">Email:</strong><a href="mailto:info.econovare@gmail.com" class="footer-link">info.econovare@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> EcoNova Resources &amp; Energy Private Limited. All rights reserved.</p>
+      <p>Gandhinagar, Gujarat, India.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════ JS ════════════ -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  // Mobile offerings sub-menu
+  const mobileOfferingsBtn = document.getElementById('mobileOfferingsBtn');
+  const mobileOfferingsSub = document.getElementById('mobileOfferingsSub');
+  const mobileOfferingsChevron = document.getElementById('mobileOfferingsChevron');
+  mobileOfferingsBtn.addEventListener('click', () => {
+    const open = mobileOfferingsSub.classList.toggle('open');
+    mobileOfferingsChevron.classList.toggle('open', open);
+    mobileOfferingsBtn.setAttribute('aria-expanded', open);
+  });
+
+  // Desktop offerings dropdown (hover)
+  const offeringsWrapper = document.getElementById('offeringsWrapper');
+  const offeringsDropdown = document.getElementById('offeringsDropdown');
+  const offeringsTrigger = document.getElementById('offeringsTrigger');
+  const offeringsChevron = document.getElementById('offeringsChevron');
+  offeringsWrapper.addEventListener('mouseenter', () => {
+    offeringsDropdown.classList.add('open');
+    offeringsChevron.classList.add('open');
+    offeringsTrigger.classList.add('active');
+    offeringsTrigger.setAttribute('aria-expanded', 'true');
+  });
+  offeringsWrapper.addEventListener('mouseleave', () => {
+    offeringsDropdown.classList.remove('open');
+    offeringsChevron.classList.remove('open');
+    offeringsTrigger.classList.remove('active');
+    offeringsTrigger.setAttribute('aria-expanded', 'false');
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Offering card hover border color
+  document.querySelectorAll('.offering-card').forEach(card => {
+    const color = card.dataset.border;
+    card.addEventListener('mouseenter', () => { card.style.borderColor = color; });
+    card.addEventListener('mouseleave', () => { card.style.borderColor = 'var(--en-border)'; });
+  });
+</script>
+</body>
+</html>

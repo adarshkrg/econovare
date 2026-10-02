@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Geothermal Heating &amp; Cooling Systems | EcoNova Resources &amp; Energy</title>
+  <meta name="description" content="Cool in summer, warm in winter using the earth's natural energy. EcoNova's Geothermal Heating and Cooling (GHC) systems cut energy consumption by up to 72%."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700;800&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--en-dark-green:#1E3A2B;--en-forest-green:#1F3A21;--en-olive:#556B22;--en-leaf:#A8BF45;--en-teal:#0E7C86;--en-deep-teal:#0B5D52;--en-navy:#17325E;--en-bg-soft:#F7FDF0;--en-bg-white:#ffffff;--en-bg-muted:#F2F9EC;--en-mint:#7DF9E5;--en-aqua-light:#E2F5EE;--en-text-dark:#1a1a1a;--en-text-body:#4a5568;--en-text-muted:#718096;--en-border:#D4E3C5;--en-border-light:#E8F0DC;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Lato',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--en-text-dark);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    .en-heading{font-family:'Lora',Georgia,serif;}
+    .section-pad{padding:clamp(60px,8vw,100px) 0;}
+    .en-container{max-width:1400px;margin:0 auto;padding:0 clamp(24px,5vw,80px);}
+    /* Navbar */
+    .navbar{position:sticky;top:0;z-index:100;background:#fff;border-bottom:.5px solid var(--en-border);width:100%;}
+    .navbar-inner{max-width:1400px;margin:0 auto;padding:0 24px;height:80px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo img{height:52px;width:auto;object-fit:contain;}
+    .nav-links{display:flex;gap:28px;align-items:center;}
+    .nav-link-item{font-size:15px;color:var(--en-text-body);font-weight:700;transition:color .2s;}
+    .nav-link-item:hover,.nav-link-item.active{color:var(--en-teal);}
+    .offerings-wrapper{position:relative;}
+    .offerings-trigger{font-size:15px;color:var(--en-text-body);font-weight:700;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:4px;padding:0;font-family:'Lato',sans-serif;transition:color .2s;}
+    .offerings-trigger:hover{color:var(--en-teal);}
+    .dropdown-chevron{transition:transform .25s;}
+    .dropdown-chevron.open{transform:rotate(180deg);}
+    .offerings-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;border:.5px solid var(--en-border);box-shadow:0 8px 28px rgba(30,58,43,.12);padding:8px;min-width:240px;z-index:200;display:none;}
+    .offerings-dropdown.open{display:block;}
+    .dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--en-text-dark);font-size:13px;font-weight:600;transition:background .15s;}
+    .dropdown-item:hover{background:rgba(168,191,69,.12);color:var(--en-forest-green);}
+    .nav-cta{display:inline-flex;align-items:center;background:#fff;border-radius:40px;padding:6px 6px 6px 18px;box-shadow:0 2px 12px rgba(30,58,43,.1);border:1px solid var(--en-border);white-space:nowrap;transition:all .2s;flex-shrink:0;}
+    .nav-cta:hover{box-shadow:0 4px 20px rgba(14,124,134,.25);transform:translateY(-1px);}
+    .nav-cta:hover .cta-arrow-circle{transform:rotate(45deg);}
+    .cta-arrow-circle{width:32px;height:32px;border-radius:50%;background:var(--en-teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s;}
+    .nav-cta-label{font-size:13px;font-weight:700;color:var(--en-dark-green);margin-right:10px;}
+    .nav-hamburger{background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px;display:none;align-items:flex-end;}
+    .ham-line{display:block;height:2.5px;border-radius:3px;background:var(--en-leaf);transition:all .3s;}
+    .ham-line-1{width:14px;}.ham-line-2{width:19px;}.ham-line-3{width:24px;}
+    .nav-hamburger.open .ham-line-1{width:24px;transform:translateY(7.5px) rotate(45deg);}
+    .nav-hamburger.open .ham-line-2{opacity:0;width:0;}
+    .nav-hamburger.open .ham-line-3{width:24px;transform:translateY(-7.5px) rotate(-45deg);}
+    .nav-mobile-menu{background:#fff;border-top:.5px solid var(--en-border);padding:16px 24px 24px;flex-direction:column;gap:18px;display:none;}
+    .nav-mobile-menu.open{display:flex;}
+    .mobile-offerings-sub{margin-top:10px;padding-left:12px;display:none;flex-direction:column;gap:10px;}
+    .mobile-offerings-sub.open{display:flex;}
+    .mobile-cta{background:var(--en-teal);color:#fff;font-size:13px;font-weight:700;padding:12px;border-radius:8px;text-align:center;display:block;}
+    @media(max-width:768px){.nav-links,.nav-cta{display:none!important;}.nav-hamburger{display:flex!important;}}
+    @media(min-width:769px){.nav-hamburger{display:none!important;}.nav-mobile-menu{display:none!important;}}
+    .section-label{color:var(--en-teal);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;display:inline-block;margin-bottom:12px;}
+    .card-white{background:#fff;border:1px solid var(--en-border);border-radius:16px;padding:clamp(24px,3vw,32px);box-shadow:0 4px 16px rgba(30,58,43,.05);}
+    .stat-card{border-radius:16px;padding:32px 24px;text-align:center;color:#fff;}
+    .sdg-badge{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+    .loop-card{background:#fff;border:1px solid var(--en-border);border-radius:14px;padding:24px 20px;box-shadow:0 2px 10px rgba(30,58,43,.04);}
+    .btn-teal{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;background:var(--en-teal);color:#fff;font-weight:700;font-size:16px;border-radius:8px;box-shadow:0 4px 16px rgba(14,124,134,.35);transition:all .2s;}
+    .btn-teal:hover{background:var(--en-deep-teal);transform:translateY(-2px);}
+    footer{background:var(--en-dark-green);color:#fff;border-top:3px solid var(--en-leaf);padding-top:clamp(50px,7vw,80px);padding-bottom:30px;}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;margin-bottom:50px;}
+    .footer-logo-box{width:48px;height:48px;border-radius:8px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;padding:2px;}
+    .footer-logo-box img{width:44px;height:44px;object-fit:contain;}
+    .footer-link{font-size:14px;color:#D1E2D6;transition:color .2s;}
+    .footer-link:hover{color:var(--en-mint);}
+    .footer-col-title{font-size:16px;font-weight:800;color:var(--en-mint);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:13px;color:#A2C3AF;}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="nav-logo"><img src="/public/images/logo.png" alt="EcoNova"/></a>
+    <div class="nav-links">
+      <div class="offerings-wrapper" id="ow"><button class="offerings-trigger" id="ot">Offerings<svg class="dropdown-chevron" id="oc" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="offerings-dropdown" id="od"><a href="/offerings#renewable-energy" class="dropdown-item">Renewable Energy</a><a href="/offerings#engineering" class="dropdown-item">Engineering &amp; Technology</a><a href="/offerings#agriculture" class="dropdown-item">Agriculture &amp; Food Processing</a><a href="/offerings#marine" class="dropdown-item">Marine &amp; Aquaculture</a></div></div>
+      <a href="/about" class="nav-link-item">About</a>
+      <a href="/geothermal" class="nav-link-item active">Geothermal</a>
+      <a href="/#market" class="nav-link-item">Market</a>
+      <a href="/about#leadership" class="nav-link-item">Leadership</a>
+      <a href="/connect" class="nav-link-item">Contact</a>
+    </div>
+    <a href="/connect" class="nav-cta"><span class="nav-cta-label">Contact Us</span><div class="cta-arrow-circle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></a>
+    <button class="nav-hamburger" id="hb"><span class="ham-line ham-line-1"></span><span class="ham-line ham-line-2"></span><span class="ham-line ham-line-3"></span></button>
+  </div>
+  <div class="nav-mobile-menu" id="mm">
+    <div><button id="mob" style="background:none;border:none;cursor:pointer;font-size:15px;color:var(--en-text-dark);font-weight:700;display:flex;align-items:center;gap:6px;padding:0;font-family:'Lato',sans-serif;width:100%;text-align:left;">Offerings<svg class="dropdown-chevron" id="moc" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--en-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="mobile-offerings-sub" id="mos"><a href="/offerings" style="font-size:13px;color:var(--en-teal);font-weight:600;">Renewable Energy</a><a href="/offerings" style="font-size:13px;color:var(--en-teal);font-weight:600;">Engineering &amp; Technology</a></div></div>
+    <a href="/about" style="font-size:15px;font-weight:700;">About</a>
+    <a href="/geothermal" style="font-size:15px;font-weight:700;">Geothermal</a>
+    <a href="/#market" style="font-size:15px;font-weight:700;">Market</a>
+    <a href="/connect" style="font-size:15px;font-weight:700;">Contact</a>
+    <a href="/connect" class="mobile-cta">Contact Us</a>
+  </div>
+</nav>
+
+<main style="min-height:100vh;background:var(--en-bg-white);">
+
+  <!-- HERO -->
+  <section style="background:linear-gradient(135deg,var(--en-bg-soft) 0%,#E2F5EE 50%,var(--en-aqua-light) 100%);padding:clamp(60px,8vw,100px) 0 clamp(40px,6vw,70px);position:relative;overflow:hidden;">
+    <div class="en-container" style="position:relative;z-index:1;text-align:center;">
+      <span style="display:inline-flex;align-items:center;padding:6px 16px;border-radius:999px;background:rgba(14,124,134,.12);color:var(--en-teal);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;">Earth Energy Technology</span>
+      <h1 class="en-heading" style="font-size:clamp(32px,5.2vw,56px);font-weight:800;color:var(--en-dark-green);line-height:1.15;max-width:1000px;margin:0 auto 18px;">Geothermal Cooling &amp; Heating Systems</h1>
+      <p style="font-size:clamp(18px,2.4vw,24px);font-weight:700;color:var(--en-deep-teal);max-width:850px;margin:0 auto 32px;line-height:1.45;">&ldquo;Cool in summer, warm in winter, using the earth&rsquo;s natural energy.&rdquo;</p>
+      <!-- SDG Badges -->
+      <div style="margin-bottom:36px;"><span style="display:block;font-size:12px;font-weight:800;color:var(--en-text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">UN Sustainable Development Goals (SDG) Alignment:</span>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+          <div class="sdg-badge" style="background:#4C9F38;color:#fff;"><strong>SDG 3:</strong> Good Health &amp; Well-being</div>
+          <div class="sdg-badge" style="background:#FCC30B;color:#000;"><strong>SDG 7:</strong> Affordable &amp; Clean Energy</div>
+          <div class="sdg-badge" style="background:#FD9D24;color:#000;"><strong>SDG 11:</strong> Sustainable Cities &amp; Communities</div>
+          <div class="sdg-badge" style="background:#3F7E44;color:#fff;"><strong>SDG 13:</strong> Climate Action</div>
+        </div>
+      </div>
+      <!-- Key Benefits -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1100px;margin:0 auto 36px;text-align:left;">
+        <div class="card-white"><div style="font-size:24px;margin-bottom:8px;">⚡</div><h2 style="font-size:16px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Clean Energy</h2><p style="font-size:13px;color:var(--en-text-body);line-height:1.5;">Decarbonizes thermal energy demand using constant subsurface temperatures.</p></div>
+        <div class="card-white"><div style="font-size:24px;margin-bottom:8px;">🤝</div><h2 style="font-size:16px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Community Empowerment</h2><p style="font-size:13px;color:var(--en-text-body);line-height:1.5;">Reliable thermal comfort that stabilizes localized energy grids.</p></div>
+        <div class="card-white"><div style="font-size:24px;margin-bottom:8px;">🌍</div><h2 style="font-size:16px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Climate Action</h2><p style="font-size:13px;color:var(--en-text-body);line-height:1.5;">Cuts building HVAC emissions substantially with zero direct on-site combustion.</p></div>
+        <div class="card-white"><div style="font-size:24px;margin-bottom:8px;">🛡️</div><h2 style="font-size:16px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Energy Security</h2><p style="font-size:13px;color:var(--en-text-body);line-height:1.5;">Shields buildings and campuses from fossil fuel and volatile electricity price swings.</p></div>
+      </div>
+      <a href="#pilot-cta" class="btn-teal"><span>Request a Feasibility Consultation</span><span>↓</span></a>
+    </div>
+  </section>
+
+  <!-- PROBLEM & SOLUTION -->
+  <section class="section-pad" style="background:#fff;">
+    <div class="en-container"><div style="max-width:900px;margin:0 auto;">
+      <span class="section-label">The Surge in Cooling Demand</span>
+      <h2 class="en-heading" style="font-size:clamp(26px,3.8vw,38px);font-weight:800;color:var(--en-dark-green);line-height:1.25;margin-bottom:20px;">Problem &amp; Solution: Transitioning Beyond Strained Cooling Grids</h2>
+      <div style="background:var(--en-bg-soft);border-left:4px solid var(--en-teal);padding:24px 28px;border-radius:0 12px 12px 0;margin-bottom:28px;"><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">The Cooling Challenge in India</h3><p style="font-size:16px;color:var(--en-text-body);line-height:1.7;">Air-conditioner use in India is growing at approximately <strong>8-10% annually</strong>, with annual sales rising from roughly <strong>3-7 million units in the mid-2010s</strong> to over <strong>11-15 million by the mid-2020s</strong>. This exponential surge strains electrical grid infrastructure, drives peak electricity tariffs, and escalates urban heat island effects.</p></div>
+      <p style="font-size:16px;color:var(--en-text-body);line-height:1.7;margin-bottom:20px;">EcoNova Resources &amp; Energy proposes to pilot-demonstrate <strong>Geothermal Heating and Cooling (GHC)</strong> as a long-term, sustainable, energy-efficient alternative utilizing the earth&rsquo;s stable subsurface temperatures.</p>
+      <div style="background:var(--en-bg-muted);border:1px solid var(--en-border);border-radius:14px;padding:24px;display:flex;align-items:center;gap:20px;"><div style="font-size:36px;">🌡️</div><div><h4 style="font-size:17px;font-weight:800;color:var(--en-dark-green);margin-bottom:4px;">Constant Underground Temperature</h4><p style="font-size:15px;color:var(--en-text-body);line-height:1.6;">At just <strong>5-10 feet depth</strong>, ground temperature stays relatively constant year-round (typically <strong>10°C to 25°C</strong>, depending on geographical location), regardless of extreme seasonal atmospheric shifts.</p></div></div>
+    </div></div>
+  </section>
+
+  <!-- WHAT IS GHC -->
+  <section class="section-pad" style="background:var(--en-bg-soft);">
+    <div class="en-container"><div style="max-width:900px;margin:0 auto;">
+      <span class="section-label">Technology Overview</span>
+      <h2 class="en-heading" style="font-size:clamp(26px,3.8vw,38px);font-weight:800;color:var(--en-dark-green);line-height:1.25;margin-bottom:20px;">What is Geothermal Heating &amp; Cooling (GHC)?</h2>
+      <p style="font-size:16px;color:var(--en-text-body);line-height:1.7;margin-bottom:20px;">Geothermal Heating and Cooling harnesses the stable thermal reservoir beneath our feet. The earth acts as a natural <strong>heat sink during summer</strong> and a <strong>heat source during winter</strong>.</p>
+      <p style="font-size:16px;color:var(--en-text-body);line-height:1.7;margin-bottom:28px;">This thermodynamic transfer is achieved using a specialized <strong>Geothermal Heat Pump (GHP)</strong> connected to an underground loop system. GHPs represent one of the most energy-efficient, environmentally benign residential and commercial heating and cooling technologies known today.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div class="card-white"><div style="font-size:28px;margin-bottom:8px;">☀️ ➔ 🌍</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Summer Cooling Mode</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Heat is extracted from indoor air and deposited safely into the cooler subsurface ground, providing chill, high-efficiency comfort without laboring against scorching outdoor air.</p></div>
+        <div class="card-white"><div style="font-size:28px;margin-bottom:8px;">❄️ ➔ 🏠</div><h3 style="font-size:18px;font-weight:800;color:var(--en-dark-green);margin-bottom:6px;">Winter Heating Mode</h3><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Thermal energy is extracted from the warmer subterranean earth and elevated by the heat pump into the building, eliminating fossil fuel burning and high-wattage electrical resistance heating.</p></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- WHY GHC: STATS -->
+  <section class="section-pad" style="background:#fff;">
+    <div class="en-container"><div style="max-width:900px;margin:0 auto;">
+      <span class="section-label">Strategic Advantages</span>
+      <h2 class="en-heading" style="font-size:clamp(26px,3.8vw,38px);font-weight:800;color:var(--en-dark-green);line-height:1.25;margin-bottom:20px;">Why GHC: Unrivaled Decarbonization &amp; Efficiency</h2>
+      <p style="font-size:16px;color:var(--en-text-body);line-height:1.7;margin-bottom:28px;">GHC provides clean, green, and highly efficient temperature control for individual buildings, institutional campuses, and dense communities. It decarbonizes building operations, dramatically reduces utility electricity costs, stabilizes stressed distribution grids during peak seasons, and builds lasting community resilience.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;">
+        <div class="stat-card" style="background:linear-gradient(135deg,var(--en-forest-green) 0%,var(--en-teal) 100%);"><div style="font-size:clamp(36px,5vw,48px);font-weight:900;line-height:1;margin-bottom:8px;">Up to 72%</div><p style="font-size:15px;font-weight:700;color:var(--en-mint);">Reduction in energy consumption vs standard air-conditioning systems</p></div>
+        <div class="stat-card" style="background:linear-gradient(135deg,var(--en-dark-green) 0%,var(--en-navy) 100%);"><div style="font-size:clamp(36px,5vw,48px);font-weight:900;line-height:1;margin-bottom:8px;">Up to 44%</div><p style="font-size:15px;font-weight:700;color:var(--en-mint);">Reduction in energy use and emissions vs conventional air-source heat pumps</p></div>
+      </div>
+      <p style="font-size:13px;color:var(--en-text-muted);font-style:italic;text-align:center;">* Performance metrics based on comparative geothermal heat pump engineering data.</p>
+    </div></div>
+  </section>
+
+  <!-- HOW IT WORKS DIAGRAMS -->
+  <section class="section-pad" style="background:var(--en-bg-soft);">
+    <div class="en-container">
+      <div style="max-width:900px;margin:0 auto 50px;text-align:center;"><span class="section-label">Thermodynamic Principles</span><h2 class="en-heading" style="font-size:clamp(26px,3.8vw,38px);font-weight:800;color:var(--en-dark-green);line-height:1.25;margin-bottom:16px;">How Does Geothermal Heating &amp; Cooling Work?</h2><p style="font-size:16px;color:var(--en-text-body);line-height:1.7;">A geothermal heat pump moves heat between the building and the earth through an engineered fluid circulating in underground pipe loops. Because the subsurface temperature remains steady, the system operates seamlessly <strong>24/7/365</strong>.</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;max-width:1050px;margin:0 auto;">
+        <div class="card-white"><h3 style="font-size:19px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;text-align:center;">Summer Cooling Cycle</h3><div style="margin:16px 0;display:flex;justify-content:center;"><svg width="280" height="180" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="20" width="100" height="70" rx="6" fill="#F7FDF0" stroke="#0E7C86" stroke-width="2"/><text x="70" y="55" text-anchor="middle" fill="#1E3A2B" font-size="12" font-weight="bold">Building (Warm)</text><text x="70" y="70" text-anchor="middle" fill="#718096" font-size="10">Indoor Heat Out</text><circle cx="140" cy="55" r="22" fill="#0E7C86"/><text x="140" y="53" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">GHP</text><text x="140" y="65" text-anchor="middle" fill="#ffffff" font-size="8">Heat Pump</text><rect x="160" y="20" width="100" height="70" rx="6" fill="#E8F7F3" stroke="#1F3A21" stroke-width="2"/><text x="210" y="55" text-anchor="middle" fill="#1F3A21" font-size="12" font-weight="bold">Earth Heat Sink</text><text x="210" y="70" text-anchor="middle" fill="#0E7C86" font-size="10">Cool Subsurface</text><path d="M70 95 C 70 140, 210 140, 210 95" stroke="#0E7C86" stroke-width="3" stroke-dasharray="6 4"/><polygon points="210,95 205,105 215,105" fill="#0E7C86"/><text x="140" y="155" text-anchor="middle" fill="#0B5D52" font-size="10" font-weight="bold">Loop: Heat Dissipated into Earth</text></svg></div><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Indoor heat is absorbed and pumped through the closed subterranean loop, where the naturally cooler ground absorbs the warmth, returning refreshing cool air indoors.</p></div>
+        <div class="card-white"><h3 style="font-size:19px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;text-align:center;">Winter Heating Cycle</h3><div style="margin:16px 0;display:flex;justify-content:center;"><svg width="280" height="180" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="20" width="100" height="70" rx="6" fill="#F7FDF0" stroke="#0E7C86" stroke-width="2"/><text x="70" y="55" text-anchor="middle" fill="#1E3A2B" font-size="12" font-weight="bold">Building (Comfort)</text><text x="70" y="70" text-anchor="middle" fill="#0E7C86" font-size="10">Clean Warm Air</text><circle cx="140" cy="55" r="22" fill="#556B22"/><text x="140" y="53" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">GHP</text><text x="140" y="65" text-anchor="middle" fill="#ffffff" font-size="8">Compressor</text><rect x="160" y="20" width="100" height="70" rx="6" fill="#E8F7F3" stroke="#556B22" stroke-width="2"/><text x="210" y="55" text-anchor="middle" fill="#1F3A21" font-size="12" font-weight="bold">Earth Heat Source</text><text x="210" y="70" text-anchor="middle" fill="#556B22" font-size="10">Naturally Warm Ground</text><path d="M210 95 C 210 140, 70 140, 70 95" stroke="#556B22" stroke-width="3" stroke-dasharray="6 4"/><polygon points="70,95 65,105 75,105" fill="#556B22"/><text x="140" y="155" text-anchor="middle" fill="#556B22" font-size="10" font-weight="bold">Loop: Thermal Energy Extracted</text></svg></div><p style="font-size:14px;color:var(--en-text-body);line-height:1.6;">Subsurface thermal energy is extracted by the fluid loop, concentrated by the geothermal heat pump, and delivered into building spaces with maximum electrical efficiency.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN VS CLOSED LOOP -->
+  <section class="section-pad" style="background:#fff;">
+    <div class="en-container">
+      <div style="max-width:900px;margin:0 auto 50px;"><span class="section-label">System Architectures</span><h2 class="en-heading" style="font-size:clamp(26px,3.8vw,38px);font-weight:800;color:var(--en-dark-green);line-height:1.25;margin-bottom:20px;">Open Loop vs. Closed Loop Systems</h2><p style="font-size:16px;color:var(--en-text-body);line-height:1.7;">Geothermal installations are designed according to geological formations, water availability, and plot footprint.</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;max-width:1050px;margin:0 auto 50px;">
+        <div style="background:var(--en-bg-soft);border:1px solid var(--en-border);border-radius:16px;padding:32px;"><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(14,124,134,.12);color:var(--en-teal);font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:14px;">Open Loop System</span><h3 style="font-size:20px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;">Groundwater Direct Exchange</h3><p style="font-size:15px;color:var(--en-text-body);line-height:1.65;margin-bottom:16px;">Uses existing groundwater, a well, pond, or lake directly as the heat source or heat sink. Water is pumped through the heat pump and returned to the source or a discharge well.</p><div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid var(--en-border-light);"><strong style="font-size:13px;color:var(--en-teal);display:block;">Key Attributes:</strong><span style="font-size:13px;color:var(--en-text-body);">Cheaper capital cost and higher thermodynamic efficiency, but depends heavily on continuous local groundwater availability and water quality regulations.</span></div></div>
+        <div style="background:var(--en-bg-soft);border:1px solid var(--en-border);border-radius:16px;padding:32px;"><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(85,107,34,.15);color:var(--en-olive);font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:14px;">Closed Loop System (Widely Used)</span><h3 style="font-size:20px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;">Sealed Continuous Fluid Loops</h3><p style="font-size:15px;color:var(--en-text-body);line-height:1.65;margin-bottom:16px;">Circulates an engineered antifreeze and water solution continuously through HDPE pipes buried underground. No contact with external groundwater.</p><div style="background:#fff;padding:12px 16px;border-radius:8px;border:1px solid var(--en-border-light);"><strong style="font-size:13px;color:var(--en-forest-green);display:block;">Key Attributes:</strong><span style="font-size:13px;color:var(--en-text-body);">The most widely implemented, highly reliable, zero-contamination method adaptable to virtually any soil or rock formation.</span></div></div>
+      </div>
+      <div style="max-width:1050px;margin:0 auto;"><h3 class="en-heading" style="font-size:22px;font-weight:800;color:var(--en-dark-green);text-align:center;margin-bottom:28px;">Closed-Loop Configurations</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+          <div class="loop-card"><div style="font-size:24px;margin-bottom:10px;">⬇️</div><h4 style="font-size:17px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Ground Vertical</h4><p style="font-size:13px;color:var(--en-text-body);line-height:1.6;">Boreholes drilled 100-400 ft deep. Ideal where land area is limited or urban spaces.</p></div>
+          <div class="loop-card"><div style="font-size:24px;margin-bottom:10px;">↔️</div><h4 style="font-size:17px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Ground Horizontal</h4><p style="font-size:13px;color:var(--en-text-body);line-height:1.6;">Trenches dug 4-6 ft deep across open land. Cost-effective for expansive campuses.</p></div>
+          <div class="loop-card"><div style="font-size:24px;margin-bottom:10px;">➰</div><h4 style="font-size:17px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Ground Looped (Slinky)</h4><p style="font-size:13px;color:var(--en-text-body);line-height:1.6;">Coiled pipes laid horizontally to maximize pipe surface area in shorter trenches.</p></div>
+          <div class="loop-card"><div style="font-size:24px;margin-bottom:10px;">💧</div><h4 style="font-size:17px;font-weight:800;color:var(--en-dark-green);margin-bottom:8px;">Pond Looped Collector</h4><p style="font-size:13px;color:var(--en-text-body);line-height:1.6;">Submerged closed pipe loops in an adjacent body of water for exceptional heat transfer.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST & EFFICIENCY -->
+  <section class="section-pad" style="background:var(--en-bg-soft);">
+    <div class="en-container"><div style="max-width:900px;margin:0 auto;">
+      <span class="section-label">Economic Viability</span>
+      <h2 class="en-heading" style="font-size:clamp(26px,3.8vw,38px);font-weight:800;color:var(--en-dark-green);line-height:1.25;margin-bottom:20px;">Cost Implications: High Efficiency &amp; Rapid Payback</h2>
+      <p style="font-size:16px;color:var(--en-text-body);line-height:1.7;margin-bottom:28px;">While traditional HVAC systems consume heavy electrical loads or burn fossil fuels, geothermal heat pumps move existing thermal energy from the ground. This delivers exceptional thermodynamic coefficients of performance:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:28px;">
+        <div style="background:var(--en-bg-soft);border:2px solid var(--en-teal);border-radius:16px;padding:28px;text-align:center;"><span style="font-size:12px;font-weight:800;color:var(--en-teal);text-transform:uppercase;">Geothermal Unit</span><div style="font-size:36px;font-weight:900;color:var(--en-dark-green);margin:10px 0;">$3.00 &ndash; $4.00</div><p style="font-size:14px;color:var(--en-text-body);line-height:1.5;">Delivers roughly <strong>$3 to $4 of heat per $1 of electricity</strong> consumed (Approx. <strong>5 units of heat per 1 unit of electricity</strong>).</p></div>
+        <div style="background:#F8F9FA;border:1px solid #D1D5DB;border-radius:16px;padding:28px;text-align:center;"><span style="font-size:12px;font-weight:800;color:#6B7280;text-transform:uppercase;">Conventional Gas Furnace</span><div style="font-size:36px;font-weight:900;color:#4B5563;margin:10px 0;">65&cent; &ndash; 95&cent;</div><p style="font-size:14px;color:var(--en-text-body);line-height:1.5;">Delivers only <strong>65¢ to 95¢ of heat per $1 of fuel</strong> burned (Approx. <strong>0.96 units of heat per unit of gas</strong>).</p></div>
+      </div>
+      <p style="font-size:13px;color:var(--en-text-muted);font-style:italic;text-align:center;">Data Sources: Bosch Geothermal Engineering Studies, ClimateMaster Research.</p>
+    </div></div>
+  </section>
+
+  <!-- PILOT CTA -->
+  <section id="pilot-cta" style="background:linear-gradient(135deg,var(--en-dark-green) 0%,var(--en-navy) 100%);padding:clamp(60px,8vw,90px) 0;color:#fff;text-align:center;">
+    <div class="en-container">
+      <span style="display:inline-block;padding:4px 16px;border-radius:999px;background:rgba(125,249,229,.15);color:var(--en-mint);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">Pilot &amp; Commercial Engagements</span>
+      <h2 class="en-heading" style="font-size:clamp(28px,4.5vw,44px);font-weight:800;color:#fff;max-width:850px;margin:0 auto 20px;line-height:1.25;">Request a Geothermal Pilot / Feasibility Consultation</h2>
+      <p style="font-size:clamp(16px,2vw,19px);color:var(--en-aqua-light);max-width:750px;margin:0 auto 36px;line-height:1.6;">Whether you are planning a new educational campus, industrial facility, hospital, or commercial hub, our specialized geothermal geological team led by Dr. Bijaya Krushna Behera conducts comprehensive subsurface thermal assessments.</p>
+      <a href="/connect" class="btn-teal"><span>Request a Geothermal Consultation</span><span>➔</span></a>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="en-container">
+    <div class="footer-grid">
+      <div style="max-width:360px;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div class="footer-logo-box"><img src="/public/images/logo.png" alt="EcoNova Logo"/></div><div><span style="font-size:17px;font-weight:800;display:block;line-height:1.2;color:#fff;">ECONOVA</span><span style="font-size:11px;color:var(--en-leaf);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Resources &amp; Energy</span></div></div><p style="font-size:14px;color:#D1E2D6;line-height:1.6;margin-bottom:14px;"><strong>EcoNova Resources &amp; Energy Private Limited</strong><br>Shaping a Cleaner, Greener Tomorrow.</p></div>
+      <div><h4 class="footer-col-title">Core Verticals</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:12px;"><li><a href="/offerings" class="footer-link">Renewable Energy Projects</a></li><li><a href="/offerings" class="footer-link">Engineering &amp; Technology</a></li><li><a href="/geothermal" class="footer-link">Geothermal Heating &amp; Cooling</a></li></ul></div>
+      <div><h4 class="footer-col-title">Company</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:12px;"><li><a href="/" class="footer-link">Home</a></li><li><a href="/about" class="footer-link">About Us</a></li><li><a href="/connect" class="footer-link">Contact Us</a></li></ul></div>
+      <div><h4 class="footer-col-title">Contact</h4><div style="display:flex;flex-direction:column;gap:14px;font-size:14px;color:#D1E2D6;"><div><strong style="color:#fff;display:block;margin-bottom:4px;">Phone:</strong><a href="tel:+919727780048" class="footer-link">+91 9727780048</a></div><div><strong style="color:#fff;display:block;margin-bottom:2px;">Email:</strong><a href="mailto:info.econovare@gmail.com" class="footer-link">info.econovare@gmail.com</a></div></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; <span id="yr"></span> EcoNova Resources &amp; Energy Private Limited. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const hb=document.getElementById('hb'),mm=document.getElementById('mm');
+hb.addEventListener('click',()=>{const o=mm.classList.toggle('open');hb.classList.toggle('open',o);});
+const mob=document.getElementById('mob'),mos=document.getElementById('mos'),moc=document.getElementById('moc');
+mob.addEventListener('click',()=>{const o=mos.classList.toggle('open');moc.classList.toggle('open',o);});
+const ow=document.getElementById('ow'),od=document.getElementById('od'),oc=document.getElementById('oc');
+ow.addEventListener('mouseenter',()=>{od.classList.add('open');oc.classList.add('open');});
+ow.addEventListener('mouseleave',()=>{od.classList.remove('open');oc.classList.remove('open');});
+mm.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mm.classList.remove('open');hb.classList.remove('open');}));
+</script>
+</body>
+</html>

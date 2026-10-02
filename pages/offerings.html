@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Our Offerings | EcoNova Resources &amp; Energy</title>
+  <meta name="description" content="EcoNova's integrated offerings span Renewable Energy, Engineering &amp; Technology, Agriculture &amp; Food Processing, and Marine &amp; Aquaculture sectors."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700;800&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--en-dark-green:#1E3A2B;--en-forest-green:#1F3A21;--en-olive:#556B22;--en-leaf:#A8BF45;--en-teal:#0E7C86;--en-deep-teal:#0B5D52;--en-navy:#17325E;--en-bg-soft:#F7FDF0;--en-bg-white:#ffffff;--en-bg-muted:#F2F9EC;--en-mint:#7DF9E5;--en-aqua-light:#E2F5EE;--en-text-dark:#1a1a1a;--en-text-body:#4a5568;--en-text-muted:#718096;--en-border:#D4E3C5;--en-border-light:#E8F0DC;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Lato',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--en-text-dark);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    .en-heading{font-family:'Lora',Georgia,serif;}
+    .section-pad{padding:clamp(60px,8vw,100px) 0;}
+    .en-container{max-width:1400px;margin:0 auto;padding:0 clamp(24px,5vw,80px);}
+    .navbar{position:sticky;top:0;z-index:100;background:#fff;border-bottom:.5px solid var(--en-border);}
+    .navbar-inner{max-width:1400px;margin:0 auto;padding:0 24px;height:80px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo img{height:52px;width:auto;object-fit:contain;}
+    .nav-links{display:flex;gap:28px;align-items:center;}
+    .nav-link-item{font-size:15px;color:var(--en-text-body);font-weight:700;transition:color .2s;}
+    .nav-link-item:hover,.nav-link-item.active{color:var(--en-teal);}
+    .offerings-wrapper{position:relative;}
+    .offerings-trigger{font-size:15px;color:var(--en-teal);font-weight:700;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:4px;padding:0;font-family:'Lato',sans-serif;}
+    .dropdown-chevron{transition:transform .25s;}
+    .dropdown-chevron.open{transform:rotate(180deg);}
+    .offerings-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;border:.5px solid var(--en-border);box-shadow:0 8px 28px rgba(30,58,43,.12);padding:8px;min-width:240px;z-index:200;display:none;}
+    .offerings-dropdown.open{display:block;}
+    .dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--en-text-dark);font-size:13px;font-weight:600;transition:background .15s;}
+    .dropdown-item:hover{background:rgba(168,191,69,.12);color:var(--en-forest-green);}
+    .nav-cta{display:inline-flex;align-items:center;background:#fff;border-radius:40px;padding:6px 6px 6px 18px;box-shadow:0 2px 12px rgba(30,58,43,.1);border:1px solid var(--en-border);white-space:nowrap;transition:all .2s;flex-shrink:0;}
+    .nav-cta:hover{box-shadow:0 4px 20px rgba(14,124,134,.25);transform:translateY(-1px);}
+    .nav-cta:hover .cta-arrow-circle{transform:rotate(45deg);}
+    .cta-arrow-circle{width:32px;height:32px;border-radius:50%;background:var(--en-teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s;}
+    .nav-cta-label{font-size:13px;font-weight:700;color:var(--en-dark-green);margin-right:10px;}
+    .nav-hamburger{background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px;display:none;align-items:flex-end;}
+    .ham-line{display:block;height:2.5px;border-radius:3px;background:var(--en-leaf);transition:all .3s;}
+    .ham-line-1{width:14px;}.ham-line-2{width:19px;}.ham-line-3{width:24px;}
+    .nav-hamburger.open .ham-line-1{width:24px;transform:translateY(7.5px) rotate(45deg);}
+    .nav-hamburger.open .ham-line-2{opacity:0;width:0;}
+    .nav-hamburger.open .ham-line-3{width:24px;transform:translateY(-7.5px) rotate(-45deg);}
+    .nav-mobile-menu{background:#fff;border-top:.5px solid var(--en-border);padding:16px 24px 24px;flex-direction:column;gap:18px;display:none;}
+    .nav-mobile-menu.open{display:flex;}
+    .mobile-offerings-sub{margin-top:10px;padding-left:12px;display:none;flex-direction:column;gap:10px;}
+    .mobile-offerings-sub.open{display:flex;}
+    .mobile-cta{background:var(--en-teal);color:#fff;font-size:13px;font-weight:700;padding:12px;border-radius:8px;text-align:center;display:block;}
+    @media(max-width:768px){.nav-links,.nav-cta{display:none!important;}.nav-hamburger{display:flex!important;}}
+    @media(min-width:769px){.nav-hamburger{display:none!important;}.nav-mobile-menu{display:none!important;}}
+    /* Offerings */
+    .offering-card{border-radius:20px;border:2px solid transparent;padding:clamp(32px,4vw,48px);display:flex;flex-direction:column;gap:20px;transition:border-color .25s,box-shadow .25s,transform .25s;cursor:default;}
+    .offering-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(30,58,43,.1);}
+    .offering-card.renewable:hover{border-color:var(--en-teal);}
+    .offering-card.engineering:hover{border-color:var(--en-navy);}
+    .offering-card.agriculture:hover{border-color:var(--en-forest-green);}
+    .offering-card.marine:hover{border-color:var(--en-olive);}
+    .offering-icon{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;}
+    .tag{display:inline-block;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+    .btn-teal{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--en-teal);color:#fff;font-weight:700;font-size:16px;border-radius:8px;box-shadow:0 4px 18px rgba(14,124,134,.4);transition:all .2s;}
+    .btn-teal:hover{background:var(--en-deep-teal);transform:translateY(-2px);}
+    .btn-glass{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:16px;border-radius:8px;transition:all .2s;}
+    .btn-glass:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
+    footer{background:var(--en-dark-green);color:#fff;border-top:3px solid var(--en-leaf);padding-top:clamp(50px,7vw,80px);padding-bottom:30px;}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;margin-bottom:50px;}
+    .footer-logo-box{width:48px;height:48px;border-radius:8px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;padding:2px;}
+    .footer-logo-box img{width:44px;height:44px;object-fit:contain;}
+    .footer-link{font-size:14px;color:#D1E2D6;transition:color .2s;}
+    .footer-link:hover{color:var(--en-mint);}
+    .footer-col-title{font-size:16px;font-weight:800;color:var(--en-mint);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:13px;color:#A2C3AF;}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="nav-logo"><img src="/public/images/logo.png" alt="EcoNova"/></a>
+    <div class="nav-links">
+      <div class="offerings-wrapper" id="ow"><button class="offerings-trigger active" id="ot">Offerings<svg class="dropdown-chevron" id="oc" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="offerings-dropdown" id="od"><a href="#renewable-energy" class="dropdown-item">Renewable Energy</a><a href="#engineering" class="dropdown-item">Engineering &amp; Technology</a><a href="#agriculture" class="dropdown-item">Agriculture &amp; Food Processing</a><a href="#marine" class="dropdown-item">Marine &amp; Aquaculture</a></div></div>
+      <a href="/about" class="nav-link-item">About</a>
+      <a href="/geothermal" class="nav-link-item">Geothermal</a>
+      <a href="/#market" class="nav-link-item">Market</a>
+      <a href="/about#leadership" class="nav-link-item">Leadership</a>
+      <a href="/connect" class="nav-link-item">Contact</a>
+    </div>
+    <a href="/connect" class="nav-cta"><span class="nav-cta-label">Contact Us</span><div class="cta-arrow-circle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></a>
+    <button class="nav-hamburger" id="hb"><span class="ham-line ham-line-1"></span><span class="ham-line ham-line-2"></span><span class="ham-line ham-line-3"></span></button>
+  </div>
+  <div class="nav-mobile-menu" id="mm">
+    <div><button id="mob" style="background:none;border:none;cursor:pointer;font-size:15px;color:var(--en-text-dark);font-weight:700;display:flex;align-items:center;gap:6px;padding:0;font-family:'Lato',sans-serif;width:100%;text-align:left;">Offerings<svg class="dropdown-chevron" id="moc" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--en-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="mobile-offerings-sub" id="mos"><a href="#renewable-energy" style="font-size:13px;color:var(--en-teal);font-weight:600;">Renewable Energy</a><a href="#engineering" style="font-size:13px;color:var(--en-teal);font-weight:600;">Engineering &amp; Technology</a><a href="#agriculture" style="font-size:13px;color:var(--en-teal);font-weight:600;">Agriculture</a><a href="#marine" style="font-size:13px;color:var(--en-teal);font-weight:600;">Marine &amp; Aquaculture</a></div></div>
+    <a href="/about" style="font-size:15px;font-weight:700;">About</a>
+    <a href="/geothermal" style="font-size:15px;font-weight:700;">Geothermal</a>
+    <a href="/connect" style="font-size:15px;font-weight:700;">Contact</a>
+    <a href="/connect" class="mobile-cta">Contact Us</a>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section style="background:linear-gradient(135deg,var(--en-bg-soft) 0%,var(--en-aqua-light) 100%);padding:clamp(60px,8vw,100px) 0;text-align:center;">
+    <div class="en-container">
+      <span style="display:inline-block;padding:6px 18px;border-radius:999px;background:rgba(14,124,134,.12);color:var(--en-teal);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">What We Do</span>
+      <h1 class="en-heading" style="font-size:clamp(32px,5vw,54px);font-weight:800;color:var(--en-dark-green);line-height:1.15;max-width:900px;margin:0 auto 18px;">Our Core Verticals &amp; Offerings</h1>
+      <p style="font-size:clamp(16px,2vw,20px);color:var(--en-text-body);max-width:800px;margin:0 auto;line-height:1.6;">Four integrated sectors working in synergy to build a complete sustainability ecosystem — from energy to food to the ocean.</p>
+    </div>
+  </section>
+
+  <!-- OFFERINGS GRID -->
+  <section class="section-pad" style="background:#fff;">
+    <div class="en-container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
+
+        <!-- Renewable Energy -->
+        <div id="renewable-energy" class="offering-card renewable" style="background:var(--en-bg-soft);border-color:var(--en-border);">
+          <div><div class="offering-icon" style="background:linear-gradient(135deg,var(--en-teal),var(--en-deep-teal));">⚡</div><span class="tag" style="background:rgba(14,124,134,.12);color:var(--en-teal);">Sector 01</span></div>
+          <div><h2 class="en-heading" style="font-size:24px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;">Renewable Energy Projects</h2><p style="font-size:15px;color:var(--en-text-body);line-height:1.65;">End-to-end development of solar PV, wind, biomass, green hydrogen, and hybrid renewable energy projects across industrial, commercial, and community scales.</p></div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-teal);font-weight:900;margin-top:2px;">✔</span><span>Solar PV: Rooftop, ground-mount &amp; floating solar</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-teal);font-weight:900;margin-top:2px;">✔</span><span>Wind &amp; Hybrid Energy Systems</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-teal);font-weight:900;margin-top:2px;">✔</span><span>Green Hydrogen Production &amp; Biomass Energy</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-teal);font-weight:900;margin-top:2px;">✔</span><span>Geothermal Heating &amp; Cooling (GHC) Systems</span></li>
+          </ul>
+          <a href="/geothermal" style="font-size:14px;font-weight:700;color:var(--en-teal);display:inline-flex;align-items:center;gap:6px;margin-top:auto;">Learn about Geothermal ↗</a>
+        </div>
+
+        <!-- Engineering & Technology -->
+        <div id="engineering" class="offering-card engineering" style="background:#F8FAFF;border-color:var(--en-border);">
+          <div><div class="offering-icon" style="background:linear-gradient(135deg,var(--en-navy),#1a3a8f);">⚙️</div><span class="tag" style="background:rgba(23,50,94,.1);color:var(--en-navy);">Sector 02</span></div>
+          <div><h2 class="en-heading" style="font-size:24px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;">Engineering &amp; Technology</h2><p style="font-size:15px;color:var(--en-text-body);line-height:1.65;">Turnkey EPC (Engineering, Procurement &amp; Construction) services, precision manufacturing of renewable energy components, and full lifecycle operations &amp; maintenance.</p></div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-navy);font-weight:900;margin-top:2px;">✔</span><span>Turnkey EPC for Renewable Energy Plants</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-navy);font-weight:900;margin-top:2px;">✔</span><span>Manufacturing of Solar &amp; Wind Components</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-navy);font-weight:900;margin-top:2px;">✔</span><span>Air Pollution Control Technologies</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-navy);font-weight:900;margin-top:2px;">✔</span><span>O&amp;M Services &amp; Technology Transfer</span></li>
+          </ul>
+        </div>
+
+        <!-- Agriculture -->
+        <div id="agriculture" class="offering-card agriculture" style="background:#F7FDF2;border-color:var(--en-border);">
+          <div><div class="offering-icon" style="background:linear-gradient(135deg,var(--en-forest-green),var(--en-olive));">🌾</div><span class="tag" style="background:rgba(31,58,33,.1);color:var(--en-forest-green);">Sector 03</span></div>
+          <div><h2 class="en-heading" style="font-size:24px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;">Agriculture &amp; Food Processing</h2><p style="font-size:15px;color:var(--en-text-body);line-height:1.65;">Agri-tech solutions, sustainable farming practices, and food processing value chains that improve food security and create rural economic opportunities.</p></div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-forest-green);font-weight:900;margin-top:2px;">✔</span><span>Modern Agri-tech &amp; Precision Farming</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-forest-green);font-weight:900;margin-top:2px;">✔</span><span>Food Processing &amp; Value Addition</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-forest-green);font-weight:900;margin-top:2px;">✔</span><span>Agricultural Supply Chain &amp; Export</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-forest-green);font-weight:900;margin-top:2px;">✔</span><span>Cold Chain &amp; Storage Infrastructure</span></li>
+          </ul>
+        </div>
+
+        <!-- Marine -->
+        <div id="marine" class="offering-card marine" style="background:#F2F9FB;border-color:var(--en-border);">
+          <div><div class="offering-icon" style="background:linear-gradient(135deg,var(--en-olive),#3a6b5e);">🐟</div><span class="tag" style="background:rgba(85,107,34,.12);color:var(--en-olive);">Sector 04</span></div>
+          <div><h2 class="en-heading" style="font-size:24px;font-weight:800;color:var(--en-dark-green);margin-bottom:12px;">Marine &amp; Aquaculture</h2><p style="font-size:15px;color:var(--en-text-body);line-height:1.65;">Blue economy initiatives including sustainable marine resource harvesting, aquaculture development, and seafood processing with environmental stewardship.</p></div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-olive);font-weight:900;margin-top:2px;">✔</span><span>Sustainable Marine Resource Harvesting</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-olive);font-weight:900;margin-top:2px;">✔</span><span>Aquaculture Development &amp; Fish Farming</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-olive);font-weight:900;margin-top:2px;">✔</span><span>Seafood Processing &amp; Export</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--en-text-dark);"><span style="color:var(--en-olive);font-weight:900;margin-top:2px;">✔</span><span>Blue Economy &amp; Coastal Community Upliftment</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(135deg,var(--en-dark-green) 0%,var(--en-navy) 100%);padding:clamp(60px,8vw,90px) 0;color:#fff;text-align:center;">
+    <div class="en-container" style="position:relative;z-index:1;">
+      <span style="display:inline-block;padding:6px 18px;border-radius:999px;background:rgba(125,249,229,.15);color:var(--en-mint);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;">Partner With EcoNova</span>
+      <h2 class="en-heading" style="font-size:clamp(28px,4.5vw,46px);font-weight:800;color:#fff;max-width:900px;margin:0 auto 20px;line-height:1.25;">Interested in Our Offerings? Let's Build Something Together.</h2>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;">
+        <a href="/connect" class="btn-teal"><span>Get in Touch</span></a>
+        <a href="tel:+919727780048" class="btn-glass"><span>Call +91 9727780048</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="en-container">
+    <div class="footer-grid">
+      <div style="max-width:360px;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div class="footer-logo-box"><img src="/public/images/logo.png" alt="EcoNova Logo"/></div><div><span style="font-size:17px;font-weight:800;display:block;line-height:1.2;color:#fff;">ECONOVA</span><span style="font-size:11px;color:var(--en-leaf);font-weight:700;text-transform:uppercase;letter-spacing:1px;">Resources &amp; Energy</span></div></div><p style="font-size:14px;color:#D1E2D6;line-height:1.6;"><strong>EcoNova Resources &amp; Energy Private Limited</strong><br>Shaping a Cleaner, Greener Tomorrow.</p></div>
+      <div><h4 class="footer-col-title">Core Verticals</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:12px;"><li><a href="#renewable-energy" class="footer-link">Renewable Energy Projects</a></li><li><a href="#engineering" class="footer-link">Engineering &amp; Technology</a></li><li><a href="#agriculture" class="footer-link">Agriculture &amp; Food Processing</a></li><li><a href="#marine" class="footer-link">Marine &amp; Aquaculture</a></li><li><a href="/geothermal" class="footer-link">Geothermal Heating &amp; Cooling</a></li></ul></div>
+      <div><h4 class="footer-col-title">Company</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:12px;"><li><a href="/" class="footer-link">Home</a></li><li><a href="/about" class="footer-link">About Us</a></li><li><a href="/connect" class="footer-link">Contact Us</a></li></ul></div>
+      <div><h4 class="footer-col-title">Contact</h4><div style="display:flex;flex-direction:column;gap:14px;font-size:14px;color:#D1E2D6;"><div><strong style="color:#fff;display:block;margin-bottom:4px;">Phone:</strong><a href="tel:+919727780048" class="footer-link">+91 9727780048</a></div><div><strong style="color:#fff;display:block;margin-bottom:2px;">Email:</strong><a href="mailto:info.econovare@gmail.com" class="footer-link">info.econovare@gmail.com</a></div></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; <span id="yr"></span> EcoNova Resources &amp; Energy Private Limited. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const hb=document.getElementById('hb'),mm=document.getElementById('mm');
+hb.addEventListener('click',()=>{const o=mm.classList.toggle('open');hb.classList.toggle('open',o);});
+const mob=document.getElementById('mob'),mos=document.getElementById('mos'),moc=document.getElementById('moc');
+mob.addEventListener('click',()=>{const o=mos.classList.toggle('open');moc.classList.toggle('open',o);});
+const ow=document.getElementById('ow'),od=document.getElementById('od'),oc=document.getElementById('oc');
+ow.addEventListener('mouseenter',()=>{od.classList.add('open');oc.classList.add('open');});
+ow.addEventListener('mouseleave',()=>{od.classList.remove('open');oc.classList.remove('open');});
+mm.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mm.classList.remove('open');hb.classList.remove('open');}));
+</script>
+</body>
+</html>
